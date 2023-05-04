@@ -1,0 +1,84 @@
+.wrap {
+  display: flex;
+  height: 100px;
+}
+
+.left_menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 80px;
+  height: 100vh;
+  border-right: 1px solid #505050;
+}
+
+
+.left_menu h2 {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 900;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.4);
+}
+
+.left_menu p {
+  transform: rotate(-90deg);
+  width: 140px;
+  color:#fff
+}
+
+.right_menu {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  margin-left: 80px;
+  border-bottom: 1px solid #505050;
+}
+
+.right_menu h1 {
+  padding-left: 60px;
+  font-size: 30px;
+  font-family: 'Rajdhani';
+  font-weight: 800;
+}
+
+.hide_menu {
+  transform: translateX(-50%) rotate(-90deg);
+  margin-left: 42px;
+}
+
+.hide_menu div {
+  width: 30px;
+  height: 3px;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.show_menu {
+  position: relative;
+  padding-right: 15px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+  font-size: 18px;
+  font-family: 'Rajdhani';
+  font-weight: 500;
+}
+
+.menu :hover {
+  font-weight: bold;
+}
+
+.menu a {
+  padding: 30px;
+} 

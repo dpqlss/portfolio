@@ -1,0 +1,15 @@
+.intro {
+  position: absolute;
+  top:50%;
+  left: 140px;
+}
+
+.intro h1 {
+  margin-bottom: 20px;
+  font-family: 'Montserrat';
+  font-size: 60px;
+}
+
+.intro p {
+  font-size: 18px;
+}
