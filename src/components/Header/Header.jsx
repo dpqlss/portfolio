@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsGithub } from "react-icons/bs";
-import BugerMenu from "../BugerMenu";
+import Modal from "../Modal";
 
 const Header = () => {
   const [isOpen, setMenu] = useState(false);
@@ -11,8 +11,8 @@ const Header = () => {
     window.open(url, "_blank");
   };
 
-  const handleMenu = () => {
-    setMenu((isOpen) => !isOpen);
+  const toggleMenu = () => {
+    setMenu(!isOpen);
   };
 
   return (
@@ -21,36 +21,34 @@ const Header = () => {
         <h2 onClick={() => handleOpenNewTab("https://github.com/dpqlss")}>
           <BsGithub />
         </h2>
-        <div onClick={handleMenu}>
+        <div onClick={toggleMenu}>
           {isOpen ? (
-            <BugerMenu>
+            <Modal>
               <button className={styles.show_menu}></button>
-            </BugerMenu>
+            </Modal>
           ) : (
-            <div className={styles.hide_menu}>
-              <div className="line1"></div>
-              <div className="line2"></div>
-              <div className="line3"></div>
-            </div>
+            <div className={styles.hide_menu}></div>
           )}
         </div>
         <p>TEL. 010 6786 2018</p>
       </div>
       <div className={styles.right_menu}>
-        <Link to="/">
-          <h1>Front-end Developer</h1>
-        </Link>
+        <h1>
+          <Link to="/">Front-end Developer</Link>
+        </h1>
         <nav>
           <ul className={styles.menu}>
-            <Link to="About">
-              <li>About</li>
-            </Link>
-            <Link to="/projects">
-              <li>Projects</li>
-            </Link>
-            <Link to="/contact">
-              <li>Contact</li>
-            </Link>
+            <li>
+              <Link to="about">About</Link>
+            </li>
+
+            <li>
+              <Link to="projects">Projects</Link>
+            </li>
+
+            <li>
+              <Link to="contact">Contact</Link>
+            </li>
           </ul>
         </nav>
       </div>
