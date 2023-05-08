@@ -1,7 +1,7 @@
 .about {
   padding: 50px;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: rgb(255,255,255);
 }
 
 .title {
@@ -15,17 +15,17 @@
   height: 180px;
   padding: 20px;
   border-radius: 50%;
-  background-color: #39d9c8;
+  background-color: rgb(57,217,200);
 }
 
 .textbox > h2{
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  font-size: 2em;
+  font-size: 2rem;
   font-family: "Rajdhani";
   font-weight: 700;
-  color:#333;
+  color:rgb(51,51,51);
 }
 
 .textbox > h2::after{
@@ -33,13 +33,13 @@
   flex-grow:1;
   height: 1px;
   margin: 0 16px;
-  background-color: #ddd;
+  background-color: rgb(221,221,221);
 }
 
 .textbox > p {
   margin-top: 20px;
   line-height: 26px;
-  color : #454545;
+  color: rgb(80,80,80);
 }
 
 
@@ -50,16 +50,16 @@
 }
 
 .intro li {
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 50px;
-  background-color: #f0f0f0;
+  background-color: rgb(240,240,240);
+  font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: rgb(80,80,80);
 }
 
 .intro li:hover {
-  color:#fff;
-  background-color: #39d9c8;
-  cursor: pointer;
+  color:rgb(255,255,255);
+  background-color: rgb(57,217,200);
 }
 

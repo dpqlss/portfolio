@@ -9,7 +9,7 @@ const Skill = () => {
     const handleScroll = () => {
       const skillSectionTop = skillSection.getBoundingClientRect().top;
 
-      if (skillSectionTop < window.innerHeight * 0.8) {
+      if (skillSectionTop < window.innerHeight * 0.5) {
         lis.forEach((li) => {
           li.style.transform = `rotateY(100deg)`;
 
@@ -17,6 +17,7 @@ const Skill = () => {
             li.style.transform = "rotateY(0deg)";
           }, 1000);
         });
+        window.removeEventListener("scroll", handleScroll);
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -27,8 +28,9 @@ const Skill = () => {
   }, []);
 
   return (
-    <section>
-      <ul className={styles.skill}>
+    <section className={styles.skill}>
+      <h2>Skill</h2>
+      <ul className={styles.box}>
         <li>
           <h2>Html, CSS</h2>
           <p>웹 표준을 지키려 노력합니다.</p>

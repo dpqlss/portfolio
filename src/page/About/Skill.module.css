@@ -1,18 +1,38 @@
 .skill {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
-.skill li {
+.skill > h2 {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  font-family: "Montserrat";
+  color: rgb(255,255,255);
+  margin-bottom: 70px;
+}
+
+.skill > h2::after{
+  content: "";
+  flex-grow:1;
+  height: 1px;
+  margin: 0 16px;
+  background-color: rgb(221,221,221);
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box li {
   width: 380px;
   padding-bottom: 30px;
   border-radius: 20px;
-  border: 2px solid #39d9c8 ;
+  border: 2px solid rgb(57,217,200);
   transition: transform 2s;
 }
 
-.skill li h2 {
+.box li h2 {
   position:relative;
   right: 20px;
   bottom: 20px;
@@ -20,15 +40,15 @@
   padding: 10px 20px;
   margin-bottom: 10px;
   transform: rotate(-10deg);
-  border: 2px solid #fff;
-  background-color: #000;
+  border: 2px solid rgb(255,255,255);
+  background-color: rgb(0,0,0);
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: "Montserrat";
-  color: #39d9c8;
+  color: rgb(57,217,200)
 }
 
-.skill li p {
+.box li p {
   padding: 5px 20px;
   line-height: 24px;
 }
