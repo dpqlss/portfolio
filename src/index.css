@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Rajdhani:wght@300;500;700&display=swap');
 
+
 body {
   margin: 0;
 	font-family: 'Rajdhani', 'Montserrat' sans-serif;
@@ -11,8 +12,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 	color:#fff;
-	background-color: #000;
+	background-color: #121111;
+	-ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+	/* background-image: url('../public/img/noise.png'); */
 }
+
+body::-webkit-scrollbar {
+	display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -66,4 +75,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 

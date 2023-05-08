@@ -1,0 +1,36 @@
+.skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+.skill li {
+  width: 380px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  border: 2px solid #39d9c8 ;
+  transition: transform 2s;
+}
+
+.skill li h2 {
+  position:relative;
+  right: 20px;
+  bottom: 20px;
+  width: 130px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  transform: rotate(-10deg);
+  border: 2px solid #fff;
+  background-color: #000;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "Montserrat";
+  color: #39d9c8;
+}
+
+.skill li p {
+  padding: 5px 20px;
+  line-height: 24px;
+}
+
+
