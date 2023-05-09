@@ -14,7 +14,7 @@
   content: "";
   flex-grow:1;
   height: 1px;
-  margin: 0 16px;
+  margin: 0 30px;
   background-color: rgb(221,221,221);
 }
 
@@ -29,12 +29,13 @@
   font-weight: 800;
 }
 
-.item span {
+.item > span {
   margin-left: 20px;
   font-size: 1rem;
 }
 
-.box li p {
+.box > li p {
   padding: 20px 0;
   font-size: 1rem;
+  color:rgb(255,255,255);
 }

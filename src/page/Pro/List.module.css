@@ -1,0 +1,17 @@
+.list {
+  width: calc(100%/3.2);
+  height: 250px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: rgb(221,221,221);
+}
+
+.list > img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.list > p {
+  padding: 15px;
+  color:rgb(51,51,51);
+}

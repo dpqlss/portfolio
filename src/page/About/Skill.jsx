@@ -9,7 +9,7 @@ const Skill = () => {
     const handleScroll = () => {
       const skillSectionTop = skillSection.getBoundingClientRect().top;
 
-      if (skillSectionTop < window.innerHeight * 0.5) {
+      if (skillSectionTop < window.innerHeight * 0.6) {
         lis.forEach((li) => {
           li.style.transform = `rotateY(100deg)`;
 

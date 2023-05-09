@@ -1,0 +1,73 @@
+.Item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 80px;
+  border-radius: 10px;
+  background-color: rgb(255,255,255);
+}
+
+.Item_box {
+  color: rgb(80,80,80); 
+}
+
+.Item_box > h2 {
+  padding-bottom: 50px;
+  font-size: 3rem;
+  font-family: "Montserrat";
+  color:rgb(51, 51, 51);
+}
+
+.Item_box > ul {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.Item_box > ul li {
+  display: flex;
+  padding: 20px 0;
+  color: rgb(80,80,80);
+}
+
+.Item_box > ul li p {
+  display: flex;
+  align-items: center;
+}
+
+.Item_box > ul li p:nth-child(1){
+  width: 120px;
+  font-weight: 600;
+}
+
+.Item_box > ul li p span {
+  padding-right: 5px;
+  color: rgb(80,80,80);
+}
+
+.comment {
+  margin-bottom: 50px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment > input{
+  width: 100%;
+  border: none;
+  padding: 20px 0;
+}
+
+/* .content {
+  height: 100%;
+} */
+
+

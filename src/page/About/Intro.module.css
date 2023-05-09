@@ -32,14 +32,13 @@
   content: "";
   flex-grow:1;
   height: 1px;
-  margin: 0 16px;
+  margin: 0 30px;
   background-color: rgb(221,221,221);
 }
 
 .textbox > p {
   margin-top: 20px;
   line-height: 26px;
-  color: rgb(80,80,80);
 }
 
 
@@ -49,7 +48,7 @@
   margin-top: 30px;
 }
 
-.intro li {
+.intro > li {
   padding: 20px 30px;
   border-radius: 50px;
   background-color: rgb(240,240,240);
@@ -58,7 +57,7 @@
   color: rgb(80,80,80);
 }
 
-.intro li:hover {
+.intro > li:hover {
   color:rgb(255,255,255);
   background-color: rgb(57,217,200);
 }
