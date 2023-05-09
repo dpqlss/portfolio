@@ -1,4 +1,5 @@
 .skill {
+  width: 86%;
   margin-top: 80px;
 }
 
@@ -15,16 +16,16 @@
   content: "";
   flex-grow:1;
   height: 1px;
-  margin: 0 30px;
+  margin-left: 30px;
   background-color: rgb(221,221,221);
 }
 
-.box {
+.skill_box {
   display: flex;
   justify-content: space-between;
 }
 
-.box > li {
+.skill_box > li {
   width: 380px;
   padding-bottom: 30px;
   border-radius: 20px;
@@ -32,7 +33,7 @@
   transition: transform 2s;
 }
 
-.box > li h2 {
+.skill_box > li h2 {
   position:relative;
   right: 20px;
   bottom: 20px;
@@ -48,7 +49,7 @@
   color: rgb(57,217,200)
 }
 
-.box > li p {
+.skill_box > li p {
   padding: 5px 20px;
   line-height: 24px;
   color: rgb(255,255,255);

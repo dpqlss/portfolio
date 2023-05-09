@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsGithub } from "react-icons/bs";
-import Modal from "../Modal";
+import Modal from "../Modal/Modal";
 
 const Header = () => {
   const [isOpen, setMenu] = useState(false);

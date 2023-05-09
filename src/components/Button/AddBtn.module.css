@@ -1,0 +1,17 @@
+.btn {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.add {
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.add:hover {
+  background-color: rgb(57,217,200);
+  color:rgb(255,255,255);
+}

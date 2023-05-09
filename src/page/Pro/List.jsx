@@ -4,18 +4,20 @@ import Item from "./Item";
 
 const List = ({ list }) => {
   const { id, img, title } = list;
-  const [isOpen, setOpen] = useState();
+  const [isOpen, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(!isOpen);
   };
 
   return (
-    <li className={styles.list} onClick={handleOpen}>
-      <img src={img} alt={title} />
-      <p>{title}</p>
-      {isOpen && <Item img={img} />}
-    </li>
+    <>
+      <li className={styles.list} onClick={handleOpen}>
+        {isOpen && <Item title={title} img={img} />}
+        <img src={img} alt={title} />
+        <p>{title}</p>
+      </li>
+    </>
   );
 };
 

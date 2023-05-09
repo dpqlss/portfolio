@@ -5,10 +5,10 @@ import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
 const Item = ({ img, title }) => {
   return (
-    <section className={style.Item}>
+    <section className={style.item}>
       <div className={style.container}>
-        <div className={style.Item_box}>
-          <h2>Youtube</h2>
+        <div className={style.item_box}>
+          <h2>{title}</h2>
           <ul>
             <li>
               <p>
@@ -32,14 +32,14 @@ const Item = ({ img, title }) => {
               <p>
                 <span>
                   <BiAlignLeft />
-                </span>{" "}
+                </span>
                 Skill
               </p>
               <p>스킬이 들어갑니다. 스킬이 들어갑니다. 스킬이 들어갑니다.</p>
             </li>
           </ul>
           <div className={style.comment}>
-            <input type="text" placeholder="댓글이 들어갑니다" />
+            <input type="text" placeholder="댓글이 들어갑니다." />
           </div>
           <div className={style.content}>
             <img src={img} alt={title} />

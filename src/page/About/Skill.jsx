@@ -30,7 +30,7 @@ const Skill = () => {
   return (
     <section className={styles.skill}>
       <h2>Skill</h2>
-      <ul className={styles.box}>
+      <ul className={styles.skill_box}>
         <li>
           <h2>Html, CSS</h2>
           <p>웹 표준을 지키려 노력합니다.</p>
