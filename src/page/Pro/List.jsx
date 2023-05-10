@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaTrashAlt } from "react-icons/fa";
 import styles from "./List.module.css";
 import Item from "./Item";
 
@@ -17,7 +18,12 @@ const List = ({ list }) => {
           <Item key={id} title={title} img={img} url={url} skill={skill} />
         )}
         <img src={img} alt={title} />
-        <p>{title}</p>
+        <p>
+          {title}
+          <span>
+            <FaTrashAlt />
+          </span>
+        </p>
       </li>
     </>
   );

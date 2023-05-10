@@ -1,5 +1,5 @@
 .item {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,9 +9,10 @@
 }
 
 .container {
-  width: 80%;
-  height: 100vh;
-  margin: 50px auto;
+  position: absolute;
+  top:10%;
+  left: 10%;
+  height: 470px;
   padding: 80px;
   border-radius: 10px;
   background-color: rgb(255,255,255);

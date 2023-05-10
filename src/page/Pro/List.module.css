@@ -1,6 +1,5 @@
 .list {
-  width: calc(100%/3.2);
-  margin-bottom: 30px;
+  width:calc(33.333% - 30px);
   border-radius: 10px;
   background-color: rgb(221,221,221);
 }
@@ -11,7 +10,28 @@
 }
 
 .list > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color:rgb(51,51,51);
+}
+
+.list > p span {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: rgb(51,51,51);
+  border-radius: 50px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.list > p span:hover {
+  transform: rotate(30deg);
+  background-color: rgb(57,217,200);
+  cursor: pointer;
 }
