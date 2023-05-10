@@ -59,24 +59,12 @@
   border: none;
 }
 
-.comment {
-  margin: 50px 0px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-.comment > input{
-  width: 100%;
-  border: none;
-  padding: 20px 10px;
-}
-
 .content {
   height: 500px;
   text-align: center;
   line-height: 500px;
   background-color: #333;
-  margin-bottom: 80px;
+  margin: 50px 0 80px;
 }
 
 .item_box > button {

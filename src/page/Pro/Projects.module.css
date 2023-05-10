@@ -23,10 +23,26 @@
   background-color: rgb(255,255,255);
 }
 
+.add {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.add:hover {
+  background-color: rgb(57,217,200);
+  color:rgb(255,255,255);
+}
+
 .projects > ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 39px;
 }
 
 

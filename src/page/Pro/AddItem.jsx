@@ -1,15 +1,45 @@
 import React from "react";
-import style from "./AddItem.module.css";
+import styles from "./AddItem.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
+import { useState } from "react";
 
-const AddItem = () => {
+const AddItem = ({ onAdd, onCloseModal }) => {
+  const initialState = {
+    title: "",
+    url: "",
+    skill: "",
+  };
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAdd(formData);
+    setFormData(initialState);
+    onCloseModal();
+  };
+
   return (
-    <section className={style.item}>
-      <div className={style.container}>
-        <form className={style.item_box}>
-          <input type="text" className={style.title} placeholder="Title" />
-          <div className={style.list}>
+    <section className={styles.item}>
+      <div className={styles.container}>
+        <form className={styles.item_box} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className={styles.title}
+            name="title"
+            value={formData.title}
+            placeholder="Title"
+            onChange={handleChange}
+          />
+          <div className={styles.list}>
             <p>
               <span>
                 <MdDateRange />
@@ -18,28 +48,37 @@ const AddItem = () => {
             </p>
             <input type="date" />
           </div>
-          <div className={style.list}>
+          <div className={styles.list}>
             <p>
               <span>
                 <BiLinkAlt />
               </span>
               URL
             </p>
-            <input type="text" placeholder="URL을 입력해주세요." />
+            <input
+              type="text"
+              placeholder="URL을 입력해주세요."
+              name="url"
+              value={formData.url}
+              onChange={handleChange}
+            />
           </div>
-          <div className={style.list}>
+          <div className={styles.list}>
             <p>
               <span>
                 <BiAlignLeft />
               </span>
               Skill
             </p>
-            <input type="text" placeholder="스킬을 입력해주세요." />
+            <input
+              type="text"
+              placeholder="스킬을 입력해주세요."
+              name="skill"
+              value={formData.skill}
+              onChange={handleChange}
+            />
           </div>
-          <div className={style.comment}>
-            <input type="text" placeholder="댓글이 들어갑니다." />
-          </div>
-          <div className={style.content}>내용이 들어갑니다.</div>
+          <div className={styles.content}>내용이 들어갑니다.</div>
           <button>등록하기</button>
         </form>
       </div>

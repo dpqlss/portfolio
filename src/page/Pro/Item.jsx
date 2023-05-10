@@ -3,7 +3,7 @@ import style from "./Item.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
-const Item = ({ img, title }) => {
+const Item = ({ title, img, url, skill }) => {
   return (
     <section className={style.item}>
       <div className={style.container}>
@@ -26,7 +26,7 @@ const Item = ({ img, title }) => {
                 </span>
                 URL
               </p>
-              <p>url이 들어갑니다. url이 들어갑니다. url이 들어갑니다.</p>
+              <p>{url}</p>
             </li>
             <li>
               <p>
@@ -35,7 +35,7 @@ const Item = ({ img, title }) => {
                 </span>
                 Skill
               </p>
-              <p>스킬이 들어갑니다. 스킬이 들어갑니다. 스킬이 들어갑니다.</p>
+              <p>{skill}</p>
             </li>
           </ul>
           <div className={style.comment}>

@@ -23,6 +23,7 @@
   line-height: 40px;
   border-radius: 50%;
   background-color: rgba(255,255,255,0.4);
+  cursor: pointer;
 }
 
 .hide_menu {
@@ -32,6 +33,7 @@
   transform: translateX(-50%) rotate(-90deg);
   margin-left: 42px;
   background-color: rgb(255,255,255);
+  cursor: pointer;
 }
 
 .hide_menu::before, .hide_menu::after{
