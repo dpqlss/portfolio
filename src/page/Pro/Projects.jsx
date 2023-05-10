@@ -5,7 +5,7 @@ import List from "./List";
 import AddItem from "./AddItem";
 
 const Projects = () => {
-  const [list, setList] = useState(ItemBox);
+  const [lists, setLists] = useState(ListItem);
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,13 +18,18 @@ const Projects = () => {
 
   const handleAdd = (data) => {
     const newItem = {
-      id: list.length + 1,
+      id: lists.length + 1,
       title: data.title,
       img: process.env.PUBLIC_URL + "/img/pro1.png",
       url: data.url,
       skill: data.skill,
     };
-    setList((prev) => [...prev, newItem]);
+    setLists((prev) => [...prev, newItem]);
+  };
+
+  const handleDelete = (deleted) => {
+    setLists(lists.filter((ls) => ls.id !== deleted.id));
+    console.log(lists);
   };
 
   return (
@@ -38,10 +43,11 @@ const Projects = () => {
           <AddItem onAdd={handleAdd} onCloseModal={handleCloseModal} />
         )}
         <ul>
-          {list.map((item) => (
+          {lists.map((item) => (
             <List
               key={item.id}
-              list={{ ...item, url: item.url, skill: item.skill }}
+              lists={{ ...item, url: item.url, skill: item.skill }}
+              onDelete={handleDelete}
             />
           ))}
         </ul>
@@ -52,22 +58,26 @@ const Projects = () => {
 
 export default Projects;
 
-const ItemBox = [
+const ListItem = [
   {
     id: 1,
     title: "Youtube",
     img: process.env.PUBLIC_URL + "/img/pro1.png",
-    url: "",
-    skill: "",
+    url: "url이 들어갑니다.",
+    skill: "skill이 들어갑니다.",
   },
   {
     id: 2,
-    img: process.env.PUBLIC_URL + "/img/pro2.png",
     title: "Shopping",
+    img: process.env.PUBLIC_URL + "/img/pro2.png",
+    url: "url이 들어갑니다.",
+    skill: "skill이 들어갑니다.",
   },
   {
     id: 3,
-    img: process.env.PUBLIC_URL + "/img/pro3.png",
     title: "TodoList",
+    img: process.env.PUBLIC_URL + "/img/pro3.png",
+    url: "url이 들어갑니다.",
+    skill: "skill이 들어갑니다.",
   },
 ];

@@ -30,6 +30,7 @@ const AddItem = ({ onAdd, onCloseModal }) => {
   return (
     <section className={styles.item}>
       <div className={styles.container}>
+        <button onClick={() => onCloseModal()}>창닫기</button>
         <form className={styles.item_box} onSubmit={handleSubmit}>
           <input
             type="text"

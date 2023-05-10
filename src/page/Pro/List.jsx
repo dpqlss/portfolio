@@ -3,24 +3,39 @@ import { FaTrashAlt } from "react-icons/fa";
 import styles from "./List.module.css";
 import Item from "./Item";
 
-const List = ({ list }) => {
-  const { id, title, img, url, skill } = list;
-  const [isOpen, setOpen] = useState(false);
+const List = ({ lists, onDelete }) => {
+  const { id, title, img, url, skill } = lists;
+  const [showModal, setShowModal] = useState(false);
 
   const handleOpen = () => {
-    setOpen(!isOpen);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleDelete = () => {
+    onDelete(lists);
   };
 
   return (
     <>
+      {showModal && (
+        <Item
+          key={id}
+          title={title}
+          img={img}
+          url={url}
+          skill={skill}
+          onCloseModal={handleCloseModal}
+        />
+      )}
       <li className={styles.list} onClick={handleOpen}>
-        {isOpen && (
-          <Item key={id} title={title} img={img} url={url} skill={skill} />
-        )}
         <img src={img} alt={title} />
         <p>
           {title}
-          <span>
+          <span onClick={handleDelete}>
             <FaTrashAlt />
           </span>
         </p>
