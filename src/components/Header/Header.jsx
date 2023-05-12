@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { BsGithub } from "react-icons/bs";
 import Modal from "../Modal/Modal";
+import { useEffect } from "react";
 
 const Header = () => {
   const [isOpen, setMenu] = useState(false);
+  const [headerScroll, setHeaderScroll] = useState(0);
 
   const handleOpenNewTab = (url) => {
     window.open(url, "_blank");
@@ -14,6 +16,18 @@ const Header = () => {
   const toggleMenu = () => {
     setMenu(!isOpen);
   };
+
+  useEffect(() => {
+    const updateScroll = () => {
+      setHeaderScroll(window.scrollY || document.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", updateScroll);
+
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
 
   return (
     <header className={styles.wrap}>
@@ -32,7 +46,9 @@ const Header = () => {
         </div>
         <p>TEL. 010 6786 2018</p>
       </div>
-      <div className={styles.right_menu}>
+      <div
+        className={headerScroll < 100 ? styles.right_menu : styles.change_right}
+      >
         <h1>
           <Link to="/">Front-end Developer</Link>
         </h1>

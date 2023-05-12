@@ -10,7 +10,7 @@
 
 .container {
   position: absolute;
-  top:10%;
+  top:75px;
   left: 10%;
   height: 470px;
   padding: 80px;
@@ -21,6 +21,30 @@
 
 .item_box {
   color: rgb(80,80,80); 
+}
+
+.close_btn {
+  position: absolute;
+  right: 100px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.close_btn::before, .close_btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: rgb(51,51,51);
+}
+
+.close_btn::before {
+  transform: rotate(45deg);
+}
+
+.close_btn::after {
+  transform: rotate(-45deg);
 }
 
 .item_box > h2 {

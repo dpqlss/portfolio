@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Item.module.css";
+import styles from "./Item.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
@@ -9,10 +9,10 @@ const Item = ({ title, img, url, skill, onCloseModal }) => {
   };
 
   return (
-    <section className={style.item}>
-      <div className={style.container}>
-        <div className={style.item_box}>
-          <button onClick={handleClose}>창닫기</button>
+    <section className={styles.item}>
+      <div className={styles.container}>
+        <div className={styles.item_box}>
+          <div className={styles.close_btn} onClick={handleClose} />
           <h2>{title}</h2>
           <ul>
             <li>
@@ -43,10 +43,10 @@ const Item = ({ title, img, url, skill, onCloseModal }) => {
               <p>{skill}</p>
             </li>
           </ul>
-          <form className={style.comment}>
+          <form className={styles.comment}>
             <input type="text" placeholder="댓글이 들어갑니다." />
           </form>
-          <div className={style.content}>
+          <div className={styles.content}>
             <img src={img} alt={title} />
           </div>
         </div>

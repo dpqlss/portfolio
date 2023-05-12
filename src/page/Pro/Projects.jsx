@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Projects.module.css";
 import List from "./List";
 import AddItem from "./AddItem";
@@ -8,29 +7,44 @@ const Projects = () => {
   const [lists, setLists] = useState(ListItem);
   const [showModal, setShowModal] = useState(false);
 
-  const handleOpenModal = () => {
+  const handleOpenModal = useCallback(() => {
     setShowModal(true);
-  };
+  }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setShowModal(false);
-  };
+  }, []);
 
-  const handleAdd = (data) => {
-    const newItem = {
-      id: lists.length + 1,
-      title: data.title,
-      img: process.env.PUBLIC_URL + "/img/pro1.png",
-      url: data.url,
-      skill: data.skill,
-    };
-    setLists((prev) => [...prev, newItem]);
-  };
+  const handleAdd = useCallback(
+    (data) => {
+      const newItem = {
+        id: lists.length + 1,
+        title: data.title,
+        img: process.env.PUBLIC_URL + "/img/pro1.png",
+        url: data.url,
+        skill: data.skill,
+      };
+      setLists([...lists, newItem]);
+      localStorage.setItem("lists", JSON.stringify([...lists, newItem]));
+    },
+    [lists]
+  );
 
-  const handleDelete = (deleted) => {
-    setLists(lists.filter((ls) => ls.id !== deleted.id));
-    console.log(lists);
-  };
+  const handleDelete = useCallback(
+    (deleted) => {
+      const newList = lists.filter((ls) => ls.id !== deleted.id);
+      setLists(newList);
+      localStorage.setItem("lists", JSON.stringify(newList));
+    },
+    [lists]
+  );
+
+  useEffect(() => {
+    const listLocal = JSON.parse(localStorage.getItem("lists"));
+    if (listLocal) {
+      setLists(listLocal);
+    }
+  }, []);
 
   return (
     <div className={styles.wrap}>
