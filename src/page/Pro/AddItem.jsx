@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./AddItem.module.css";
+import { v4 as uuidv4 } from "uuid";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import { addDoc, collection } from "firebase/firestore";
@@ -29,13 +30,14 @@ const AddItem = ({ onAdd, onCloseModal }) => {
 
     //파이어베이스에 데이터추가
     addDoc(collection(db, "list"), {
+      id: uuidv4(),
       title: formData.title,
       url: formData.url,
       skill: formData.skill,
       date: new Date().toISOString(),
     })
-      .then((docRef) => {
-        console.log("추가", docRef.id);
+      .then((result) => {
+        console.log("추가", result.id);
       })
       .catch((error) => {
         console.log("실패", error);

@@ -1,0 +1,79 @@
+.wrap {
+  position: absolute;
+  top:100px;
+  left: 20px;
+  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.contact {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.contact > h2 {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  font-family: "Montserrat";
+  color: rgb(255,255,255);
+  margin-bottom: 70px;
+}
+
+.contact > h2::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  margin-left: 30px;
+  background-color: rgb(255,255,255);
+}
+
+.contact_box {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.img_box {
+  width: calc(100% / 2 - 30px);
+  height: 620px;
+  background-color: #ddd;
+}
+
+.contact ul {
+  width: calc(100% / 2 - 30px);
+  margin-left: 80px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.contact ul li {
+  margin-bottom: 30px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.contact ul li span {
+  padding-right: 10px;
+}
+
+.contact ul li p {
+  padding: 20px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color :rgb(255,255,255);
+}
+
+.contact ul li button {
+  margin: 20px 0;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.contact ul li button:hover {
+  background-color: rgb(57,217,200);
+  color: #fff;
+  cursor: pointer;
+}

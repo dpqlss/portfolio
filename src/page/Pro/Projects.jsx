@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { v4 as uuidv4 } from "uuid";
 import styles from "./Projects.module.css";
 import List from "./List";
 import AddItem from "./AddItem";
@@ -18,7 +19,7 @@ const Projects = () => {
   const handleAdd = useCallback(
     (data) => {
       const newItem = {
-        id: lists.length + 1,
+        id: uuidv4(),
         title: data.title,
         img: process.env.PUBLIC_URL + "/img/pro1.png",
         url: data.url,

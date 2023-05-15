@@ -7,9 +7,11 @@ import Career from "./Career";
 const About = () => {
   return (
     <div className={styles.wrap}>
-      <Intro />
-      <Skill />
-      <Career />
+      <div className={styles.box}>
+        <Intro />
+        <Skill />
+        <Career />
+      </div>
     </div>
   );
 };

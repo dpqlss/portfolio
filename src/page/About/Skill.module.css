@@ -1,5 +1,4 @@
 .skill {
-  width: 86%;
   margin-top: 80px;
 }
 
@@ -26,7 +25,7 @@
 }
 
 .skill_box > li {
-  width: 380px;
+  width: 370px;
   padding-bottom: 30px;
   border-radius: 20px;
   border: 2px solid rgb(57,217,200);

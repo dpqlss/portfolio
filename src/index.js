@@ -6,7 +6,7 @@ import App from "./App";
 import Main from "./page/Main/Main";
 import About from "./page/About/About";
 import Projects from "./page/Pro/Projects";
-import Contact from "./page/Contact";
+import Contact from "./page/Contact/Contact";
 
 const router = createBrowserRouter([
   {
