@@ -3,7 +3,7 @@ import styles from "./EditorItem.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
-const EditorItem = ({ title, url, skill }) => {
+const EditorItem = ({ title, url, skill, onUpdate }) => {
   const [formData, setFormData] = useState({ title, url, skill });
 
   const handleChange = (e) => {
@@ -16,6 +16,7 @@ const EditorItem = ({ title, url, skill }) => {
 
   const handleSave = (e) => {
     e.preventDefault();
+    onUpdate();
     console.log("수정");
   };
 

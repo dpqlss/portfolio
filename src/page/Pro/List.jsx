@@ -3,7 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import styles from "./List.module.css";
 import Item from "./Item";
 
-const List = ({ lists, onDelete }) => {
+const List = ({ lists, onUpdate, onDelete }) => {
   const { id, title, img, url, skill } = lists;
   const [showModal, setShowModal] = useState(false);
 
@@ -29,6 +29,7 @@ const List = ({ lists, onDelete }) => {
           url={url}
           skill={skill}
           onCloseModal={handleCloseModal}
+          onUpdate={onUpdate}
         />
       )}
       <li className={styles.list} onClick={handleOpen}>

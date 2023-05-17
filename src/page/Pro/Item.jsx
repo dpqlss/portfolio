@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import EditorItem from "./EditorItem";
 
-const Item = ({ title, img, url, skill, onCloseModal }) => {
+const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
   const [isEdit, setIsEdit] = useState(false);
 
   const handleOpen = () => {
@@ -60,7 +60,14 @@ const Item = ({ title, img, url, skill, onCloseModal }) => {
           <button className={styles.editBtn} onClick={handleOpen}>
             수정하기
           </button>
-          {isEdit && <EditorItem title={title} url={url} skill={skill} />}
+          {isEdit && (
+            <EditorItem
+              title={title}
+              url={url}
+              skill={skill}
+              onUpdate={onUpdate}
+            />
+          )}
         </div>
       </div>
     </section>

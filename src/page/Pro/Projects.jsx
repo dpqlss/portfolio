@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import styles from "./Projects.module.css";
 import List from "./List";
 import AddItem from "./AddItem";
-import { v4 as uuidv4 } from "uuid";
 import { db } from "../../firebase";
 import {
+  doc,
   collection,
   getDocs,
   addDoc,
@@ -29,7 +29,11 @@ const Projects = () => {
     const listData = async () => {
       try {
         const docSnap = await getDocs(collection(db, "list"));
-        const data = docSnap.docs.map((doc) => doc.data());
+        console.log("docSnap", docSnap);
+        const data = docSnap.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
         console.log("data", data);
         setLists(data);
       } catch (error) {
@@ -42,7 +46,6 @@ const Projects = () => {
   //추가
   const handleAdd = async (data) => {
     const newItem = {
-      id: uuidv4(),
       title: data.title,
       img: process.env.PUBLIC_URL + "/img/pro1.png",
       url: data.url,
@@ -53,25 +56,31 @@ const Projects = () => {
     return [...lists, newItem];
   };
 
-  //수정
-  const docRef = db.collection("list").doc("TvYgnEElnT5PNw0QVJD6");
-  docRef
-    .update({
-      title: "수정들어간다",
-    })
-    .then(() => {
-      console.log("Document successfully updated!");
-    })
-    .catch((error) => {
-      console.error("Error updating document: ", error);
-    });
+  // 수정
+  const handleUpdate = async (updatedItem) => {
+    const updateFields = {
+      title: "해줘! 업데이트!",
+      img: process.env.PUBLIC_URL + "/img/pro1.png",
+      url: updatedItem.url,
+      skill: updatedItem.skill,
+    };
+    console.log("updatedItem", updatedItem);
+    const docRef = doc(db, "list", updatedItem.id);
+    try {
+      await updateDoc(docRef, updateFields);
+      console.log("docRef", docRef);
+      console.log("성공");
+    } catch (error) {
+      console.log("실패", error);
+    }
+  };
 
-  //삭제
-  // const handleDelete = async (deleted) => {
-  //   console.log("삭제");
-  //   await deleteDoc(collection(db, "list"), deleted.id);
-  //   setLists((prev) => prev.filter((item) => item.id !== deleted.id));
-  // };
+  // 삭제
+  const handleDelete = async (deleted) => {
+    console.log("삭제");
+    await deleteDoc(doc(db, "list", deleted.id));
+    setLists((prev) => prev.filter((item) => item.id !== deleted.id));
+  };
 
   return (
     <div className={styles.wrap}>
@@ -88,7 +97,8 @@ const Projects = () => {
             <List
               key={item.id}
               lists={{ ...item, url: item.url, skill: item.skill }}
-              // onDelete={handleDelete}
+              onUpdate={() => handleUpdate(item)}
+              onDelete={handleDelete}
             />
           ))}
         </ul>
