@@ -4,7 +4,13 @@ import List from "./List";
 import AddItem from "./AddItem";
 import { v4 as uuidv4 } from "uuid";
 import { db } from "../../firebase";
-import { collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
 
 const Projects = () => {
   const [lists, setLists] = useState([]);
@@ -47,11 +53,25 @@ const Projects = () => {
     return [...lists, newItem];
   };
 
+  //수정
+  const docRef = db.collection("list").doc("TvYgnEElnT5PNw0QVJD6");
+  docRef
+    .update({
+      title: "수정들어간다",
+    })
+    .then(() => {
+      console.log("Document successfully updated!");
+    })
+    .catch((error) => {
+      console.error("Error updating document: ", error);
+    });
+
   //삭제
-  const handleDelete = async (deleted) => {
-    await deleteDoc(collection(db, "list"), deleted.id);
-    setLists((prev) => prev.filter((item) => item.id !== deleted.id));
-  };
+  // const handleDelete = async (deleted) => {
+  //   console.log("삭제");
+  //   await deleteDoc(collection(db, "list"), deleted.id);
+  //   setLists((prev) => prev.filter((item) => item.id !== deleted.id));
+  // };
 
   return (
     <div className={styles.wrap}>
@@ -68,7 +88,7 @@ const Projects = () => {
             <List
               key={item.id}
               lists={{ ...item, url: item.url, skill: item.skill }}
-              onDelete={handleDelete}
+              // onDelete={handleDelete}
             />
           ))}
         </ul>

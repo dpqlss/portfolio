@@ -93,5 +93,22 @@
   padding: 20px 10px;
 }
 
+.content {
+  margin: 50px 0 80px;
+}
 
+
+.editBtn {
+  width: 100%;
+  padding: 16px 70px;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+}
+
+.editBtn:hover {
+  background-color: rgb(57,217,200);
+  color:rgb(255,255,255);
+  cursor: pointer;
+} 
 

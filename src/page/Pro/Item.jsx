@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Item.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
+import EditorItem from "./EditorItem";
 
 const Item = ({ title, img, url, skill, onCloseModal }) => {
+  const [isEdit, setIsEdit] = useState(false);
+
+  const handleOpen = () => {
+    setIsEdit(true);
+  };
+
   const handleClose = () => {
     onCloseModal();
+    setIsEdit(false);
   };
 
   return (
@@ -49,6 +57,10 @@ const Item = ({ title, img, url, skill, onCloseModal }) => {
           <div className={styles.content}>
             <img src={img} alt={title} />
           </div>
+          <button className={styles.editBtn} onClick={handleOpen}>
+            수정하기
+          </button>
+          {isEdit && <EditorItem title={title} url={url} skill={skill} />}
         </div>
       </div>
     </section>
