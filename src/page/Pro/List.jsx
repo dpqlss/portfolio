@@ -16,7 +16,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
   };
 
   const handleUpdate = (updatedItem) => {
-    const updatedLists = { ...lists, ...updatedItem };
+    const updatedLists = { ...lists, updatedItem };
     onUpdate(updatedLists);
   };
 

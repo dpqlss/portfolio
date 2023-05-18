@@ -37,8 +37,14 @@
 
 .img_box {
   width: calc(100% / 2 - 30px);
-  height: 620px;
+  height: 600px;
   background-color: #ddd;
+  overflow: hidden;
+}
+
+.img_box img {
+  width: 100%;
+  height: auto;
 }
 
 .contact ul {

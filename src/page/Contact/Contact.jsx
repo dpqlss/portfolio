@@ -13,7 +13,9 @@ const Contact = () => {
       <section className={styles.contact}>
         <h2>Contact</h2>
         <div className={styles.contact_box}>
-          <div className={styles.img_box}>img가 들어갑니다</div>
+          <div className={styles.img_box}>
+            <img src="img/contact.jpeg" alt="이미지" />
+          </div>
           <ul>
             <li>
               <span>

@@ -17,6 +17,7 @@ const EditorItem = ({ title, url, skill, onUpdate }) => {
   const handleSave = (e) => {
     e.preventDefault();
     onUpdate(formData);
+    console.log("formData", formData);
     console.log("수정");
   };
 

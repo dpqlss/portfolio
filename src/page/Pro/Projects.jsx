@@ -56,19 +56,18 @@ const Projects = () => {
     return [...lists, newItem];
   };
 
-  // 수정
+  // 업데이트
   const handleUpdate = async (updatedItem) => {
+    const updateFields = {
+      title: updatedItem.title,
+      img: process.env.PUBLIC_URL + "/img/pro1.png",
+      url: updatedItem.url,
+      skill: updatedItem.skill,
+    };
     try {
-      const updateFields = {
-        title: "해줘! 업데이트!",
-        img: process.env.PUBLIC_URL + "/img/pro1.png",
-        url: updatedItem.url,
-        skill: updatedItem.skill,
-      };
-      //문서업데이트
       const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
-      console.log("updateFields", updateFields.url);
+      console.log("updateFields", updateFields);
       console.log("성공");
     } catch (error) {
       console.log("실패", error);
@@ -77,9 +76,8 @@ const Projects = () => {
 
   // 삭제
   const handleDelete = async (deleted) => {
-    console.log("삭제");
-    await deleteDoc(doc(db, "list", deleted.id));
     setLists((prev) => prev.filter((item) => item.id !== deleted.id));
+    await deleteDoc(doc(db, "list", deleted.id));
   };
 
   return (
@@ -97,7 +95,7 @@ const Projects = () => {
             <List
               key={item.id}
               lists={{ ...item, url: item.url, skill: item.skill }}
-              onUpdate={() => handleUpdate(item)}
+              onUpdate={handleUpdate}
               onDelete={handleDelete}
             />
           ))}
