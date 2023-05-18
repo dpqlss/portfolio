@@ -16,6 +16,11 @@ const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
     setIsEdit(false);
   };
 
+  const handleSubmit = (updatedItem) => {
+    onUpdate(updatedItem);
+    setIsEdit(false);
+  };
+
   return (
     <section className={styles.item}>
       <div className={styles.container}>
@@ -65,7 +70,7 @@ const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
               title={title}
               url={url}
               skill={skill}
-              onUpdate={onUpdate}
+              onUpdate={handleSubmit}
             />
           )}
         </div>

@@ -31,8 +31,8 @@ const Projects = () => {
         const docSnap = await getDocs(collection(db, "list"));
         console.log("docSnap", docSnap);
         const data = docSnap.docs.map((doc) => ({
-          id: doc.id,
           ...doc.data(),
+          id: doc.id,
         }));
         console.log("data", data);
         setLists(data);
@@ -58,17 +58,17 @@ const Projects = () => {
 
   // 수정
   const handleUpdate = async (updatedItem) => {
-    const updateFields = {
-      title: "해줘! 업데이트!",
-      img: process.env.PUBLIC_URL + "/img/pro1.png",
-      url: updatedItem.url,
-      skill: updatedItem.skill,
-    };
-    console.log("updatedItem", updatedItem);
-    const docRef = doc(db, "list", updatedItem.id);
     try {
+      const updateFields = {
+        title: "해줘! 업데이트!",
+        img: process.env.PUBLIC_URL + "/img/pro1.png",
+        url: updatedItem.url,
+        skill: updatedItem.skill,
+      };
+      //문서업데이트
+      const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
-      console.log("docRef", docRef);
+      console.log("updateFields", updateFields.url);
       console.log("성공");
     } catch (error) {
       console.log("실패", error);

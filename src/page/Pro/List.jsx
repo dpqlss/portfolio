@@ -15,6 +15,11 @@ const List = ({ lists, onUpdate, onDelete }) => {
     setShowModal(false);
   };
 
+  const handleUpdate = (updatedItem) => {
+    const updatedLists = { ...lists, ...updatedItem };
+    onUpdate(updatedLists);
+  };
+
   const handleDelete = () => {
     onDelete(lists);
   };
@@ -29,7 +34,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
           url={url}
           skill={skill}
           onCloseModal={handleCloseModal}
-          onUpdate={onUpdate}
+          onUpdate={handleUpdate}
         />
       )}
       <li className={styles.list} onClick={handleOpen}>
