@@ -59,10 +59,10 @@ const Projects = () => {
   // 업데이트
   const handleUpdate = async (updatedItem) => {
     const updateFields = {
-      title: updatedItem.title,
+      title: updatedItem.updatedItem.title,
       img: process.env.PUBLIC_URL + "/img/pro1.png",
-      url: updatedItem.url,
-      skill: updatedItem.skill,
+      url: updatedItem.updatedItem.url,
+      skill: updatedItem.updatedItem.skill,
     };
     try {
       const docRef = doc(db, "list", updatedItem.id);
@@ -72,6 +72,7 @@ const Projects = () => {
     } catch (error) {
       console.log("실패", error);
     }
+    return [...lists, updateFields];
   };
 
   // 삭제
