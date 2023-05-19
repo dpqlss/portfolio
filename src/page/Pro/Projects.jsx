@@ -57,12 +57,14 @@ const Projects = () => {
   //추가
   const handleAdd = async (data) => {
     const newItem = {
+      date: data.date,
       title: data.title,
-      img: process.env.PUBLIC_URL + "/img/pro1.png",
+      img: process.env.PUBLIC_URL + "/img/project.png",
       url: data.url,
       skill: data.skill,
     };
     //파이어베이스에 데이터 추가
+    console.log("projects date", newItem.date);
     await addDoc(collection(db, "list"), newItem);
     return [...lists, newItem];
   };
@@ -70,8 +72,9 @@ const Projects = () => {
   // 업데이트
   const handleUpdate = async (updatedItem) => {
     const updateFields = {
+      date: "ㅇㅇ",
       title: updatedItem.updatedItem.title,
-      img: process.env.PUBLIC_URL + "/img/pro1.png",
+      img: process.env.PUBLIC_URL + "/img/project.png",
       url: updatedItem.updatedItem.url,
       skill: updatedItem.updatedItem.skill,
     };
@@ -105,7 +108,12 @@ const Projects = () => {
           {lists.map((item) => (
             <List
               key={item.id}
-              lists={{ ...item, url: item.url, skill: item.skill }}
+              lists={{
+                ...item,
+                date: item.date,
+                url: item.url,
+                skill: item.skill,
+              }}
               onUpdate={handleUpdate}
               onDelete={handleDelete}
             />

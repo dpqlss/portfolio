@@ -22,7 +22,7 @@ const Career = () => {
         <li>
           <div className={styles.item}>
             신구대학교
-            <span>2022.06 ~ 2022. 09</span>
+            <span>2016.03 ~ 2018. 02</span>
           </div>
           <p>색채디자인과 졸업</p>
         </li>

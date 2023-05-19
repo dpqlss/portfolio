@@ -5,6 +5,7 @@ import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
 const AddItem = ({ onAdd, onCloseModal }) => {
   const initialState = {
+    date: "",
     title: "",
     url: "",
     skill: "",
@@ -17,6 +18,13 @@ const AddItem = ({ onAdd, onCloseModal }) => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  // 날짜;
+  const selectedDate = () => {
+    const selectedDate = document.getElementById("selectedDate").value;
+    console.log("addItem selectedDate", selectedDate);
+    onAdd({ date: selectedDate });
   };
 
   const handleSubmit = (e) => {
@@ -46,7 +54,15 @@ const AddItem = ({ onAdd, onCloseModal }) => {
               </span>
               Date
             </p>
-            <input type="date" />
+            <input type="date" id="selectedDate" />
+            <button
+              type="button"
+              value={formData.date}
+              onChange={handleChange}
+              onClick={selectedDate}
+            >
+              date save
+            </button>
           </div>
           <div className={styles.list}>
             <p>

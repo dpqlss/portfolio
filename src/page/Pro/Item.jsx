@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import EditorItem from "./EditorItem";
 
-const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
+const Item = ({ title, img, date, url, skill, onCloseModal, onUpdate }) => {
   const [isEdit, setIsEdit] = useState(false);
 
   const handleOpen = () => {
@@ -35,7 +35,7 @@ const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
                 </span>
                 Date
               </p>
-              <input type="date" />
+              <p>{date}</p>
             </li>
             <li>
               <p>
