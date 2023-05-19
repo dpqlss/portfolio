@@ -24,6 +24,17 @@ const Projects = () => {
     setShowModal(false);
   }, []);
 
+  //실시간 데이터 업데이트
+  useEffect(() => {
+    db.collection("list").onSnapshot((snapshot) => {
+      const realTiem = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setLists(realTiem);
+    });
+  }, []);
+
   // 조회
   useEffect(() => {
     const listData = async () => {
@@ -31,8 +42,8 @@ const Projects = () => {
         const docSnap = await getDocs(collection(db, "list"));
         console.log("docSnap", docSnap);
         const data = docSnap.docs.map((doc) => ({
-          ...doc.data(),
           id: doc.id,
+          ...doc.data(),
         }));
         console.log("data", data);
         setLists(data);
@@ -72,7 +83,6 @@ const Projects = () => {
     } catch (error) {
       console.log("실패", error);
     }
-    return [...lists, updateFields];
   };
 
   // 삭제

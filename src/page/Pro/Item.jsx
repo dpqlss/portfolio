@@ -71,6 +71,7 @@ const Item = ({ title, img, url, skill, onCloseModal, onUpdate }) => {
               url={url}
               skill={skill}
               onUpdate={handleSubmit}
+              onCloseModal={onCloseModal}
             />
           )}
         </div>

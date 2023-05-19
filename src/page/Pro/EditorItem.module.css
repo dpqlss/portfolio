@@ -1,8 +1,109 @@
 .editor {
-  position: absolute;
-  top:0;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 3;
 }
+
+.container {
+  position: absolute;
+  top:75px;
+  left: 10%;
+  width: 70%;
+  height: 470px;
+  padding: 80px;
+  border-radius: 10px;
+  background-color: rgb(255,255,255);
+  overflow: auto;
+}
+
+.close_btn {
+  position: absolute;
+  right: 100px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.close_btn::before, .close_btn::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: rgb(51,51,51);
+}
+
+.close_btn::before {
+  transform: rotate(45deg);
+}
+
+.close_btn::after {
+  transform: rotate(-45deg);
+}
+
+.item_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.title {
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  font-family: "Montserrat";
+  color:rgb(51, 51, 51);
+  border:none;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: rgb(80,80,80);
+}
+
+.list > p {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  font-weight: 600;
+}
+
+.list > p > span {
+  padding-right: 5px;
+  color: rgb(80,80,80);
+}
+
+.list > input {
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(245,245,245);
+  border: none;
+}
+
+.content {
+  height: 500px;
+  text-align: center;
+  line-height: 500px;
+  background-color: #333;
+  margin: 50px 0 80px;
+}
+
+.item_box > button {
+  padding: 16px 70px;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+}
+
+.item_box > button:hover {
+  background-color: rgb(57,217,200);
+  color:rgb(255,255,255);
+  cursor: pointer;
+} 
+
+

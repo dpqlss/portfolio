@@ -3,7 +3,7 @@ import styles from "./EditorItem.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
-const EditorItem = ({ title, url, skill, onUpdate }) => {
+const EditorItem = ({ title, url, skill, onUpdate, onCloseModal }) => {
   const [formData, setFormData] = useState({ title, url, skill });
 
   const handleChange = (e) => {
@@ -17,14 +17,12 @@ const EditorItem = ({ title, url, skill, onUpdate }) => {
   const handleSave = (e) => {
     e.preventDefault();
     onUpdate(formData);
-    console.log("formData", formData);
-    console.log("수정");
   };
 
   return (
     <section className={styles.editor}>
       <div className={styles.container}>
-        <div className={styles.close_btn} />
+        <div className={styles.close_btn} onClick={() => onCloseModal()} />
         <form className={styles.item_box} onSubmit={handleSave}>
           <input
             type="text"
