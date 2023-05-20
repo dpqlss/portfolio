@@ -20,13 +20,6 @@ const AddItem = ({ onAdd, onCloseModal }) => {
     }));
   };
 
-  // 날짜;
-  const selectedDate = () => {
-    const selectedDate = document.getElementById("selectedDate").value;
-    console.log("addItem selectedDate", selectedDate);
-    onAdd({ date: selectedDate });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd(formData);
@@ -42,9 +35,9 @@ const AddItem = ({ onAdd, onCloseModal }) => {
           <input
             type="text"
             className={styles.title}
+            placeholder="Title"
             name="title"
             value={formData.title}
-            placeholder="Title"
             onChange={handleChange}
           />
           <div className={styles.list}>
@@ -54,15 +47,13 @@ const AddItem = ({ onAdd, onCloseModal }) => {
               </span>
               Date
             </p>
-            <input type="date" id="selectedDate" />
-            <button
-              type="button"
+            <input
+              type="date"
+              id="selectedDate"
+              name="date"
               value={formData.date}
               onChange={handleChange}
-              onClick={selectedDate}
-            >
-              date save
-            </button>
+            />
           </div>
           <div className={styles.list}>
             <p>

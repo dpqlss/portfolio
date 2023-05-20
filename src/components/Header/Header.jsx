@@ -34,7 +34,7 @@ const Header = () => {
       <div className={styles.left_menu}>
         <div
           className={styles.git}
-          conClick={() => handleOpenNewTab("https://github.com/dpqlss")}
+          onClick={() => handleOpenNewTab("https://github.com/dpqlss")}
         >
           <BsGithub />
         </div>

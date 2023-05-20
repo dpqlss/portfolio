@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import EditorItem from "./EditorItem";
 
-const Item = ({ title, img, date, url, skill, onCloseModal, onUpdate }) => {
+const Item = ({ title, date, img, url, skill, onCloseModal, onUpdate }) => {
   const [isEdit, setIsEdit] = useState(false);
 
   const handleOpen = () => {
@@ -44,7 +44,14 @@ const Item = ({ title, img, date, url, skill, onCloseModal, onUpdate }) => {
                 </span>
                 URL
               </p>
-              <p>{url}</p>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#000" }}
+              >
+                {url}
+              </a>
             </li>
             <li>
               <p>
@@ -67,6 +74,7 @@ const Item = ({ title, img, date, url, skill, onCloseModal, onUpdate }) => {
           </button>
           {isEdit && (
             <EditorItem
+              date={date}
               title={title}
               url={url}
               skill={skill}

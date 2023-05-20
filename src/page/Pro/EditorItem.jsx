@@ -3,8 +3,8 @@ import styles from "./EditorItem.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
-const EditorItem = ({ title, url, skill, onUpdate, onCloseModal }) => {
-  const [formData, setFormData] = useState({ title, url, skill });
+const EditorItem = ({ title, date, url, skill, onUpdate, onCloseModal }) => {
+  const [formData, setFormData] = useState({ title, date, url, skill });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,8 +27,8 @@ const EditorItem = ({ title, url, skill, onUpdate, onCloseModal }) => {
           <input
             type="text"
             className={styles.title}
-            name="title"
             placeholder="Title"
+            name="title"
             value={formData.title}
             onChange={handleChange}
           />
@@ -39,7 +39,13 @@ const EditorItem = ({ title, url, skill, onUpdate, onCloseModal }) => {
               </span>
               Date
             </p>
-            <input type="date" />
+            <input
+              type="date"
+              id="selectedDate"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+            />
           </div>
           <div className={styles.list}>
             <p>

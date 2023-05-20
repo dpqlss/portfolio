@@ -72,12 +72,13 @@ const Projects = () => {
   // 업데이트
   const handleUpdate = async (updatedItem) => {
     const updateFields = {
-      date: "ㅇㅇ",
+      date: updatedItem.updatedItem.date,
       title: updatedItem.updatedItem.title,
       img: process.env.PUBLIC_URL + "/img/project.png",
       url: updatedItem.updatedItem.url,
       skill: updatedItem.updatedItem.skill,
     };
+    console.log("date", updateFields.date);
     try {
       const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
