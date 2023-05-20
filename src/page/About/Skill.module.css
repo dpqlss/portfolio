@@ -5,9 +5,9 @@
 .skill > h2 {
   display: flex;
   align-items: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-family: "Montserrat";
-  color: rgb(255,255,255);
+  color: #fff;
   margin-bottom: 70px;
 }
 
@@ -16,7 +16,7 @@
   flex-grow:1;
   height: 1px;
   margin-left: 30px;
-  background-color: rgb(221,221,221);
+  background-color: #ddd;
 }
 
 .skill_box {
@@ -28,7 +28,7 @@
   width: 370px;
   padding-bottom: 30px;
   border-radius: 20px;
-  border: 2px solid rgb(57,217,200);
+  border: 2px solid #39d9c8;
   transition: transform 2s;
 }
 
@@ -40,18 +40,70 @@
   padding: 10px 20px;
   margin-bottom: 10px;
   transform: rotate(-10deg);
-  border: 2px solid rgb(255,255,255);
+  border: 2px solid #fff;
   background-color: rgb(0,0,0);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-family: "Montserrat";
-  color: rgb(57,217,200)
+  color: #39d9c8;
 }
 
 .skill_box > li dd {
   padding: 5px 20px;
   line-height: 24px;
-  color: rgb(255,255,255);
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .skill_box > li {
+    width: 260px;
+  }
+}
+
+@media (max-width: 900px){
+  .skill > h2 {
+    font-size: 40px;
+  }
+
+  .skill_box {
+    display: block;
+  }
+
+  .skill_box > li {
+    width: 100%;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 900px){
+  .skill > h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px){
+  .skill {
+    margin-top: 60px;
+  }
+
+  .skill > h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .skill_box > li dt {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 320px){
+  .skill > h2 {
+    font-size: 30px;
+  }
+
+  .skill_box > li {
+    margin-top: 60px;
+  }
 }
 
 

@@ -5,9 +5,9 @@
 .career > h2 {
   display: flex;
   align-items: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-family: "Montserrat";
-  color: rgb(255,255,255);
+  color: #fff;
 }
 
 .career > h2::after{
@@ -15,27 +15,80 @@
   flex-grow:1;
   height: 1px;
   margin-left: 30px;
-  background-color: rgb(221,221,221);
+  background-color: #ddd;
 }
 
 .box {
   margin-top: 50px;
 }
 
+.box > li {
+  padding-bottom: 20px;
+}
+
 .item {
-  color:rgb(0, 255, 148);
-  font-size: 1.5rem;
+  color: #00ff94;
+  font-size: 24px;
   font-family: "Montserrat";
   font-weight: 800;
 }
 
 .item > span {
   margin-left: 20px;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .box > li p {
   padding: 20px 0;
-  font-size: 1rem;
-  color:rgb(255,255,255);
+  color: #fff;
+}
+
+@media (max-width: 600px){
+  .career {
+    margin-top: 60px;
+  }
+
+  .career > h2 {
+    font-size: 40px;
+  }
+
+  .item {
+    font-size: 20px;
+  }
+
+  .item > span {
+  font-size: 16px;
+  }
+}
+
+@media (max-width: 900px){
+  .career > h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px){
+  .career > h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 320px){
+  .career > h2 {
+    font-size: 30px;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+
+  .item > span {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0px;
+    font-size: 14px;
+  }
+  .box > li p {
+    padding: 10px 0;
+  }
 }

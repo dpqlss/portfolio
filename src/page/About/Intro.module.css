@@ -1,7 +1,7 @@
 .about {
   padding: 50px;
   border-radius: 20px;
-  background-color: rgb(255,255,255);
+  background-color: #fff;
 }
 
 .title {
@@ -15,17 +15,17 @@
   height: 180px;
   padding: 20px;
   border-radius: 50%;
-  background-color: rgb(57,217,200);
+  background-color: #39d9c8;
 }
 
 .textbox > h2{
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  font-size: 2rem;
+  font-size: 32px;
   font-family: "Rajdhani";
   font-weight: 700;
-  color:rgb(51,51,51);
+  color:#333;
 }
 
 .textbox > h2::after{
@@ -33,14 +33,13 @@
   flex-grow:1;
   height: 1px;
   margin-left: 30px;
-  background-color: rgb(221,221,221);
+  background-color: #ddd;
 }
 
 .textbox > p {
   margin-top: 20px;
   line-height: 26px;
 }
-
 
 .intro {
   display: flex;
@@ -51,43 +50,72 @@
 .intro > li {
   padding: 20px 30px;
   border-radius: 50px;
-  background-color: rgb(240,240,240);
+  background-color: #f0f0f0;
   font-size: 14px;
-  line-height: 1.5em;
   font-weight: 600;
-  color: rgb(80,80,80);
+  color: #505050;
 }
 
 .intro > li:hover {
-  color:rgb(255,255,255);
-  background-color: rgb(57,217,200);
+  color: #fff;
+  background-color: #39d9c8;
 }
 
 @media (max-width: 1200px) {
-    .textbox {
-      padding-left:40px;
+   .textbox {
+      padding-left: 50px;
     }
 
     .intro > li {
-      padding: 10px 15px;
-      margin-right: 10px;
+      padding: 12px 30px;
+      line-height: 18px;
+      text-align: center;
+      margin-left: 15px;
+    }
+
+    .intro > li:nth-child(1) {
+      margin-left: 0px;
     }
 }
 
 @media (max-width: 900px) {
+  .title {
+    flex-direction: column;
+  }
+
   .textbox {
-    padding-left:40px;
+    margin-top: 50px;
+    padding-left: 0px;
   }
 
   .intro > li {
-    padding: 10px 15px;
-    margin-right: 10px;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 600px) {
+  .about {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .title {
+    display: block;
+  }
+
   .textbox {
-    padding-left:40px;
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  .textbox > h2{
+    font-size: 26px;
+  }
+
+  .textbox > p {
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 22px;
   }
 
   .intro {
@@ -95,17 +123,19 @@
   }
 
   .intro > li {
-    font-size:10px;
+    margin-left: 0;
+    margin-top: 15px;
+    font-size:12px;
   }
 }
 
 @media (max-width: 320px) {
-  .textbox {
+  /* .textbox {
     padding-left:40px;
   }
 
   .intro > li {
     padding: 10px 15px;
     margin-right: 10px;
-  }
+  } */
 }

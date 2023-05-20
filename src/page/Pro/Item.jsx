@@ -44,14 +44,16 @@ const Item = ({ title, date, img, url, skill, onCloseModal, onUpdate }) => {
                 </span>
                 URL
               </p>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#000" }}
-              >
-                {url}
-              </a>
+              <p>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#000" }}
+                >
+                  {url}
+                </a>
+              </p>
             </li>
             <li>
               <p>

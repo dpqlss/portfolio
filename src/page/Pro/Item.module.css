@@ -12,16 +12,17 @@
   position: fixed;
   top:50%;
   left: 50%;
+  width: 1200px;
+  max-height: 620px;
   transform: translate(calc(-50% + 40px), -50%);
-  max-height: 720px;
   padding: 80px;
   border-radius: 10px;
-  background-color: rgb(255,255,255);
+  background-color: #fff;
   overflow: auto;
 }
 
 .item_box {
-  color: rgb(80,80,80); 
+  color: #505050;
 }
 
 .close_btn {
@@ -37,7 +38,7 @@
   display: block;
   width: 30px;
   height: 3px;
-  background-color: rgb(51,51,51);
+  background-color: #505050;
 }
 
 .close_btn::before {
@@ -50,12 +51,12 @@
 
 .item_box > h2 {
   padding-bottom: 50px;
-  font-size: 3rem;
+  font-size: 48px;
   font-family: "Montserrat";
-  color:rgb(51, 51, 51);
+  color:#505050;
 }
 
-.Item_box > ul {
+.item_box > ul {
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
@@ -64,10 +65,10 @@
 .item_box > ul li {
   display: flex;
   padding: 20px 0;
-  color: rgb(80,80,80);
+  color: #505050;
 }
 
-.Item_box > ul li p {
+.item_box > ul li p {
   display: flex;
   align-items: center;
 }
@@ -79,7 +80,7 @@
 
 .item_box > ul li p span {
   padding-right: 5px;
-  color: rgb(80,80,80);
+  color: #505050;
 }
 
 .comment {
@@ -98,18 +99,95 @@
   margin: 50px 0 80px;
 }
 
+.content > img{
+  width: 100%;
+}
 
 .editBtn {
   width: 100%;
   padding: 16px 70px;
-  font-size: 1rem;
+  font-size: 16px;
   border-radius: 50px;
   border: none;
 }
 
 .editBtn:hover {
-  background-color: rgb(57,217,200);
-  color:rgb(255,255,255);
+  background-color: #39d9c8;
+  color:#fff;
   cursor: pointer;
 } 
 
+@media (max-width: 1200px) {
+  .close_btn {
+    right: 60px;
+  }
+
+  .container {
+    width: 80%;
+    transform: translate(calc(-50% + 20px), -50%);
+    padding: 50px;
+  }
+
+  .item_box > ul {
+    padding-bottom: 20px;
+  }
+
+  .comment {
+    margin: 10px 0px;
+  }
+}
+
+@media (max-width: 900px){
+  .title {
+    font-size: 40px;
+  }
+
+  .item_box > ul {
+    padding-bottom: 10px;
+  }
+
+  .content {
+    margin: 50px 0 60px;
+  }
+}
+
+@media (max-width: 600px){
+  .container {
+    width: 80%;
+    max-height: 460px;
+    transform: translate(calc(-50% + 0px), -50%);
+    padding: 30px;
+  }
+
+  .close_btn {
+    right: 40px;
+    top: 20px;
+  }
+  
+  .item_box > h2 {
+    padding-bottom: 30px;
+    font-size: 30px;
+  }
+
+  .item_box > ul {
+    display: block;
+  }
+
+  .item_box > ul > li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .item_box > ul li p {
+    font-size: 12px;
+    padding-bottom: 15px;
+  }
+
+  .content {
+    margin-bottom: 40px;
+  }
+  
+  .editBtn {
+    font-size: 12px;
+  }
+}

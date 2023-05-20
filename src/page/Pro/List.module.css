@@ -1,7 +1,7 @@
 .list {
   width:calc(33.333% - 30px);
   border-radius: 10px;
-  background-color: rgb(221,221,221);
+  background-color: #ddd;
 }
 
 .list > img {
@@ -14,9 +14,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 700;
-  color:rgb(51,51,51);
+  color: #333;
 }
 
 .list > p span {
@@ -24,7 +24,7 @@
   height: 30px;
   padding: 5px;
   font-size: 14px;
-  background-color: rgb(51,51,51);
+  background-color: #333;
   border-radius: 50px;
   text-align: center;
   line-height: 25px;
@@ -32,6 +32,18 @@
 
 .list > p span:hover {
   transform: rotate(30deg);
-  background-color: rgb(57,217,200);
+  background-color: #39d9c8;
   cursor: pointer;
+}
+
+@media (max-width: 900px){
+  .list {
+    width:calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px){
+  .list {
+    width: 100%;
+  }
 }

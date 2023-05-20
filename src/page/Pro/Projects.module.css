@@ -6,9 +6,9 @@
 .projects > h2 {
   display: flex;
   align-items: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-family: "Montserrat";
-  color: rgb(255,255,255);
+  color: #fff;
   margin-bottom: 70px;
 }
 
@@ -17,7 +17,7 @@
   flex-grow: 1;
   height: 1px;
   margin-left: 30px;
-  background-color: rgb(255,255,255);
+  background-color: #fff;
 }
 
 .add {
@@ -31,8 +31,8 @@
 }
 
 .add:hover {
-  background-color: rgb(57,217,200);
-  color:rgb(255,255,255);
+  background-color: #39d9c8;
+  color: #fff;
 }
 
 .projects > .list {
@@ -40,6 +40,24 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 45px;
+}
+
+@media (max-width: 900px){
+  .projects > h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px){
+  .projects > h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 320px){
+  .projects > h2 {
+    font-size: 30px;
+  }
 }
 
 

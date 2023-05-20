@@ -25,12 +25,13 @@
 @media (max-width: 600px){
   .intro {
     left: 0px;
-    width: 100%;
-    margin: 0 auto;
+    text-align: center;
   }
+
   .intro > h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
+
   .intro > p {
     font-size: 16px;
   }
@@ -40,6 +41,7 @@
   .intro > h1 {
     font-size: 26px;
   }
+  
   .intro > p {
     font-size: 12px;
   }

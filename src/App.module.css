@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -11,22 +11,35 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding: 80px 0;
 }
 
 /* max-width 기준 */
 @media (max-width: 1200px) {
+  .wrap {
+    padding-left: 60px;
+  }
+
+  .content {
+    padding: 70px 50px 70px 60px;
+  }
 }
 
 /* 테블릿 기준 */
 @media (max-width: 900px){
+  .content {
+    padding: 60px 40px 60px 60px;
+  }
 }
 
 /* 모바일 기준 */
 @media (max-width: 600px){
+  .wrap {
+    padding-left: 0px;
+  }
+
   .content {
-    text-align: center;
+    padding: 50px 30px;
   }
 }
 
