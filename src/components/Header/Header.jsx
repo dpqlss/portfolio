@@ -32,9 +32,12 @@ const Header = () => {
   return (
     <header className={styles.wrap}>
       <div className={styles.left_menu}>
-        <h2 onClick={() => handleOpenNewTab("https://github.com/dpqlss")}>
+        <div
+          className={styles.git}
+          conClick={() => handleOpenNewTab("https://github.com/dpqlss")}
+        >
           <BsGithub />
-        </h2>
+        </div>
         <div onClick={toggleMenu}>
           {isOpen ? (
             <Modal>

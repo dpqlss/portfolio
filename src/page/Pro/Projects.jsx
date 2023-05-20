@@ -95,32 +95,30 @@ const Projects = () => {
   };
 
   return (
-    <div className={styles.wrap}>
-      <section className={styles.projects}>
-        <h2>Projects</h2>
-        <button className={styles.add} onClick={handleOpenModal}>
-          Add Project +
-        </button>
-        {showModal && (
-          <AddItem onAdd={handleAdd} onCloseModal={handleCloseModal} />
-        )}
-        <ul>
-          {lists.map((item) => (
-            <List
-              key={item.id}
-              lists={{
-                ...item,
-                date: item.date,
-                url: item.url,
-                skill: item.skill,
-              }}
-              onUpdate={handleUpdate}
-              onDelete={handleDelete}
-            />
-          ))}
-        </ul>
-      </section>
-    </div>
+    <section className={styles.projects}>
+      <h2>Projects</h2>
+      <button className={styles.add} onClick={handleOpenModal}>
+        Add Project +
+      </button>
+      {showModal && (
+        <AddItem onAdd={handleAdd} onCloseModal={handleCloseModal} />
+      )}
+      <div className={styles.list}>
+        {lists.map((item) => (
+          <List
+            key={item.id}
+            lists={{
+              ...item,
+              date: item.date,
+              url: item.url,
+              skill: item.skill,
+            }}
+            onUpdate={handleUpdate}
+            onDelete={handleDelete}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

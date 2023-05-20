@@ -37,7 +37,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
           onUpdate={handleUpdate}
         />
       )}
-      <li className={styles.list} onClick={handleOpen}>
+      <div className={styles.list} onClick={handleOpen}>
         <img src={img} alt={title} />
         <p>
           {title}
@@ -45,7 +45,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
             <FaTrashAlt />
           </span>
         </p>
-      </li>
+      </div>
     </>
   );
 };

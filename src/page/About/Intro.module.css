@@ -53,6 +53,7 @@
   border-radius: 50px;
   background-color: rgb(240,240,240);
   font-size: 14px;
+  line-height: 1.5em;
   font-weight: 600;
   color: rgb(80,80,80);
 }
@@ -62,3 +63,53 @@
   background-color: rgb(57,217,200);
 }
 
+/* max-width 기준 */
+@media (max-width: 1200px) {
+    .textbox {
+      padding-left:40px;
+    }
+
+    .intro > li {
+      padding: 10px 15px;
+      margin-right: 10px;
+    }
+}
+
+/* 테블릿기준 */
+@media (max-width: 900px) {
+  .textbox {
+    padding-left:40px;
+  }
+
+  .intro > li {
+    padding: 10px 15px;
+    margin-right: 10px;
+  }
+}
+
+/* 모바일기준 */
+@media (max-width: 600px) {
+  .textbox {
+    padding-left:40px;
+  }
+
+  .intro {
+    display: block;
+  }
+
+  .intro > li {
+    font-size:10px;
+  }
+}
+
+/* 폴드전면 */
+@media (max-width: 320px) {
+  .textbox {
+    padding-left:40px;
+  }
+
+  .intro > li {
+    padding: 10px 15px;
+    margin-right: 10px;
+  }
+}

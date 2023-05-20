@@ -32,11 +32,11 @@
   transition: transform 2s;
 }
 
-.skill_box > li h2 {
+.skill_box > li dt {
+  display: inline-block;
   position:relative;
   right: 20px;
   bottom: 20px;
-  width: 130px;
   padding: 10px 20px;
   margin-bottom: 10px;
   transform: rotate(-10deg);
@@ -48,7 +48,7 @@
   color: rgb(57,217,200)
 }
 
-.skill_box > li p {
+.skill_box > li dd {
   padding: 5px 20px;
   line-height: 24px;
   color: rgb(255,255,255);

@@ -20,9 +20,9 @@
 }
 
 .list > p span {
-  width: 20px;
-  height: 20px;
-  padding: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
   font-size: 14px;
   background-color: rgb(51,51,51);
   border-radius: 50px;

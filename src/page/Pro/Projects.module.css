@@ -1,16 +1,6 @@
-.wrap {
-  position: absolute;
-  top:100px;
-  left: 36px;
-  width: 100%;
-  margin-top: 50px;
-  padding-bottom: 50px;
-}
-
 .projects {
+  width: 100%;
   position: relative;
-  width: 1200px;
-  margin: 0 auto;
 }
 
 .projects > h2 {
@@ -45,7 +35,7 @@
   color:rgb(255,255,255);
 }
 
-.projects > ul {
+.projects > .list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
