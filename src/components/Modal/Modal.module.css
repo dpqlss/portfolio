@@ -4,8 +4,8 @@
   left:0;
   width: 100%;
   height: 100%;
-  color: rgb(0,0,0);
-  background-color: rgb(255,255,255);
+  color: #000;
+  background-color: #fff;
   z-index: 1;
 }
 
@@ -22,7 +22,7 @@
   display: block;
   width: 30px;
   height: 3px;
-  background-color: rgb(51,51,51);
+  background-color: #505050;
 }
 
 .show_menu::before{
@@ -43,18 +43,32 @@
 }
 
 .modal_menu li {
-  padding: 20px 0;
-  font-size: 5vw;
+  padding: 24px 0;
+  font-size: 60px;
   font-family: 'Montserrat';
 }
 
 .modal_menu li a {
-  color : rgb(51,51,51);
+  color : #505050;
 }
 
 .modal_menu li:hover a {
-  color:rgb(57,217,200);
+  color:#39d9c8;
   transition:all .3s ease 
  }
 
+@media (max-width: 600px){
+  .show_menu {
+    top:50px;
+    right: 54px;
+    margin-left: 30px;
+  }
+  .modal_menu li {
+    padding: 18px 0;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 320px){
+}
 

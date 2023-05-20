@@ -13,8 +13,23 @@
   margin: 0 auto;
   padding-top: 100px;
   padding-bottom: 50px;
+}
 
-  @media (max-width: 1200px) {
-    padding:100px 50px 50px;
+/* max-width 기준 */
+@media (max-width: 1200px) {
+}
+
+/* 테블릿 기준 */
+@media (max-width: 900px){
+}
+
+/* 모바일 기준 */
+@media (max-width: 600px){
+  .content {
+    text-align: center;
   }
+}
+
+/* 폴드전면 */
+@media (max-width: 320px){
 }

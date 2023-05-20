@@ -63,7 +63,6 @@
   background-color: rgb(57,217,200);
 }
 
-/* max-width 기준 */
 @media (max-width: 1200px) {
     .textbox {
       padding-left:40px;
@@ -75,7 +74,6 @@
     }
 }
 
-/* 테블릿기준 */
 @media (max-width: 900px) {
   .textbox {
     padding-left:40px;
@@ -87,7 +85,6 @@
   }
 }
 
-/* 모바일기준 */
 @media (max-width: 600px) {
   .textbox {
     padding-left:40px;
@@ -102,7 +99,6 @@
   }
 }
 
-/* 폴드전면 */
 @media (max-width: 320px) {
   .textbox {
     padding-left:40px;
