@@ -3,8 +3,33 @@ import styles from "./EditorItem.module.css";
 import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
-const EditorItem = ({ title, date, url, skill, onUpdate, onCloseModal }) => {
-  const [formData, setFormData] = useState({ title, date, url, skill });
+const EditorItem = ({
+  title,
+  date,
+  url,
+  skill,
+  img,
+  text,
+  onUpdate,
+  onCloseModal,
+}) => {
+  const [formData, setFormData] = useState({
+    title,
+    date,
+    url,
+    skill,
+    img,
+    text,
+  });
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    const fileURL = URL.createObjectURL(file);
+    setFormData((prev) => ({
+      ...prev,
+      img: fileURL,
+    }));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +52,6 @@ const EditorItem = ({ title, date, url, skill, onUpdate, onCloseModal }) => {
           <input
             type="text"
             className={styles.title}
-            placeholder="Title"
             name="title"
             value={formData.title}
             onChange={handleChange}
@@ -56,7 +80,6 @@ const EditorItem = ({ title, date, url, skill, onUpdate, onCloseModal }) => {
             </p>
             <input
               type="text"
-              placeholder="URL을 입력해주세요."
               name="url"
               value={formData.url}
               onChange={handleChange}
@@ -71,13 +94,22 @@ const EditorItem = ({ title, date, url, skill, onUpdate, onCloseModal }) => {
             </p>
             <input
               type="text"
-              placeholder="스킬을 입력해주세요."
               name="skill"
               value={formData.skill}
               onChange={handleChange}
             />
           </div>
-          <div className={styles.content}>내용이 들어갑니다.</div>
+          <div className={styles.list}>
+            <input type="file" accept="images/*" onChange={handleImageUpload} />
+          </div>
+          <div className={styles.list}>
+            <input
+              type="text"
+              name="text"
+              value={formData.text}
+              onChange={handleChange}
+            />
+          </div>
           <button type="submit">수정 완료</button>
         </form>
       </div>

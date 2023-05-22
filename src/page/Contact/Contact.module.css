@@ -5,9 +5,9 @@
 .contact > h2 {
   display: flex;
   align-items: center;
-  font-size: 3rem;
+  font-size: 48px;
   font-family: "Montserrat";
-  color: rgb(255,255,255);
+  color: #fff;
   margin-bottom: 70px;
 }
 
@@ -16,7 +16,7 @@
   flex-grow: 1;
   height: 1px;
   margin-left: 30px;
-  background-color: rgb(255,255,255);
+  background-color:#fff
 }
 
 .contact_box {
@@ -26,21 +26,26 @@
 }
 
 .img_box {
+  position: relative;
   width: calc(100% / 2 - 30px);
-  height: 600px;
+  height: 0;
+  padding-top: 50%;
   background-color: #ddd;
   overflow: hidden;
 }
 
 .img_box img {
-  width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  max-width: 100%;
   height: auto;
 }
 
 .contact ul {
   width: calc(100% / 2 - 30px);
   margin-left: 80px;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -55,9 +60,9 @@
 
 .contact ul li p {
   padding: 20px 0;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 500;
-  color :rgb(255,255,255);
+  color :#fff;
 }
 
 .contact ul li button {
@@ -69,7 +74,58 @@
 }
 
 .contact ul li button:hover {
-  background-color: rgb(57,217,200);
+  background-color: #39d9c8;
   color: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 900px){
+  .contact > h2 {
+    font-size: 40px;
+  }
+  
+  .contact ul {
+    margin-left: 50px;
+    font-size: 18px;
+  }
+
+  .contact ul li {
+    margin-bottom: 20px;
+  }
+
+  .contact ul li p {
+    padding: 14px 0; 
+  }
+
+  .contact ul li button {
+    padding: 8px 20px;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px){
+  .contact > h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .contact_box {
+    display: block;
+  }
+
+  .img_box {
+    width: 100%;
+    padding-top: 100%;
+  }
+  .contact ul {
+    width: 100%;
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 320px){
+  .contact > h2 {
+    font-size: 30px;
+  }
 }

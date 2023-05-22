@@ -9,8 +9,18 @@ const AddItem = ({ onAdd, onCloseModal }) => {
     title: "",
     url: "",
     skill: "",
+    img: null,
+    text: "",
   };
   const [formData, setFormData] = useState(initialState);
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    setFormData((prev) => ({
+      ...prev,
+      img: file,
+    }));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +59,6 @@ const AddItem = ({ onAdd, onCloseModal }) => {
             </p>
             <input
               type="date"
-              id="selectedDate"
               name="date"
               value={formData.date}
               onChange={handleChange}
@@ -85,7 +94,24 @@ const AddItem = ({ onAdd, onCloseModal }) => {
               onChange={handleChange}
             />
           </div>
-          <div className={styles.content}>내용이 들어갑니다.</div>
+          {/* <div className={styles.content}>내용이 들어갑니다.</div> */}
+          <div className={styles.list}>
+            <input
+              type="file"
+              accept="images/*"
+              placeholder="이미지를 업로드 해주세요"
+              onChange={handleImageUpload}
+            />
+          </div>
+          <div className={styles.list}>
+            <input
+              type="text"
+              name="text"
+              vaule={formData.text}
+              placeholder="내용을 입력해주세요"
+              onChange={handleChange}
+            />
+          </div>
           <button>등록하기</button>
         </form>
       </div>

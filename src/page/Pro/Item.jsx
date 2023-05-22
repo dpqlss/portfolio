@@ -4,12 +4,17 @@ import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import EditorItem from "./EditorItem";
 
-const Item = ({ title, date, img, url, skill, onCloseModal, onUpdate }) => {
+const Item = ({
+  title,
+  date,
+  url,
+  skill,
+  img,
+  text,
+  onCloseModal,
+  onUpdate,
+}) => {
   const [isEdit, setIsEdit] = useState(false);
-
-  const handleOpen = () => {
-    setIsEdit(true);
-  };
 
   const handleClose = () => {
     onCloseModal();
@@ -65,27 +70,30 @@ const Item = ({ title, date, img, url, skill, onCloseModal, onUpdate }) => {
               <p>{skill}</p>
             </li>
           </ul>
+          <div className={styles.content}>
+            <img src={img} alt={title} />
+            <p>{text}</p>
+          </div>
           <form className={styles.comment}>
             <input type="text" placeholder="댓글이 들어갑니다." />
           </form>
-          <div className={styles.content}>
-            <img src={img} alt={title} />
-          </div>
-          <button className={styles.editBtn} onClick={handleOpen}>
+          <button className={styles.editBtn} onClick={() => setIsEdit(!isEdit)}>
             수정하기
           </button>
-          {isEdit && (
-            <EditorItem
-              date={date}
-              title={title}
-              url={url}
-              skill={skill}
-              onUpdate={handleSubmit}
-              onCloseModal={onCloseModal}
-            />
-          )}
         </div>
       </div>
+      {isEdit && (
+        <EditorItem
+          date={date}
+          title={title}
+          url={url}
+          skill={skill}
+          img={img}
+          text={text}
+          onUpdate={handleSubmit}
+          onCloseModal={onCloseModal}
+        />
+      )}
     </section>
   );
 };

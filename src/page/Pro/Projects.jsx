@@ -11,6 +11,7 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const Projects = () => {
   const [lists, setLists] = useState([]);
@@ -54,19 +55,31 @@ const Projects = () => {
     listData();
   }, []);
 
-  //추가
   const handleAdd = async (data) => {
-    const newItem = {
-      date: data.date,
-      title: data.title,
-      img: process.env.PUBLIC_URL + "/img/project.png",
-      url: data.url,
-      skill: data.skill,
-    };
-    //파이어베이스에 데이터 추가
-    console.log("projects date", newItem.date);
-    await addDoc(collection(db, "list"), newItem);
-    return [...lists, newItem];
+    try {
+      const newItem = {
+        date: data.date,
+        title: data.title,
+        url: data.url,
+        skill: data.skill,
+        img: data.img,
+        text: data.text,
+      };
+      // 이미지 업로드
+      if (data.img) {
+        const storage = getStorage();
+        const imageRef = ref(storage, `images/${data.img.name}`);
+        await uploadBytes(imageRef, data.img);
+        const imgUrl = await getDownloadURL(imageRef);
+        newItem.img = imgUrl;
+      }
+      console.log("img", newItem.img);
+      await addDoc(collection(db, "list"), newItem);
+      alert("새로운 글 등록 완료");
+      return [...lists, newItem];
+    } catch (error) {
+      console.log("실패", error);
+    }
   };
 
   // 업데이트
@@ -74,16 +87,16 @@ const Projects = () => {
     const updateFields = {
       date: updatedItem.updatedItem.date,
       title: updatedItem.updatedItem.title,
-      img: process.env.PUBLIC_URL + "/img/project.png",
       url: updatedItem.updatedItem.url,
       skill: updatedItem.updatedItem.skill,
+      img: updatedItem.updatedItem.img,
+      text: updatedItem.updatedItem.text,
     };
-    console.log("date", updateFields.date);
+    console.log("date", updateFields.text);
     try {
       const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
-      console.log("updateFields", updateFields);
-      console.log("성공");
+      alert("글 수정 완료");
     } catch (error) {
       console.log("실패", error);
     }
@@ -113,6 +126,8 @@ const Projects = () => {
               date: item.date,
               url: item.url,
               skill: item.skill,
+              img: item.img,
+              text: item.text,
             }}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
