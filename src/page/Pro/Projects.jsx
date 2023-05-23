@@ -85,16 +85,15 @@ const Projects = () => {
 
   // 업데이트
   const handleUpdate = async (updatedItem) => {
-    const updateFields = {
-      date: updatedItem.updatedItem.date,
-      title: updatedItem.updatedItem.title,
-      url: updatedItem.updatedItem.url,
-      skill: updatedItem.updatedItem.skill,
-      img: updatedItem.updatedItem.img,
-      text: updatedItem.updatedItem.text,
-    };
-    console.log("date", updateFields.text);
     try {
+      const updateFields = {
+        date: updatedItem.updatedItem.date,
+        title: updatedItem.updatedItem.title,
+        url: updatedItem.updatedItem.url,
+        skill: updatedItem.updatedItem.skill,
+        img: updatedItem.updatedItem.img,
+        text: updatedItem.updatedItem.text,
+      };
       const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
       alert("글 수정 완료");
