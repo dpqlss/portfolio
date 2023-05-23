@@ -19,6 +19,7 @@
   width: 100%;
   height: auto;
   transform: translate(-50% , -50%);
+  object-fit: cover;
 }
 
 .list > p {

@@ -11,7 +11,13 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytes,
+  uploadString,
+} from "firebase/storage";
 
 const Projects = () => {
   const [lists, setLists] = useState([]);
@@ -94,6 +100,14 @@ const Projects = () => {
         img: updatedItem.updatedItem.img,
         text: updatedItem.updatedItem.text,
       };
+      if (updatedItem.img) {
+        const storage = getStorage();
+        const imageRef = ref(storage, `images/${updatedItem.id}`);
+        await uploadBytes(imageRef, updatedItem.img);
+        const imgUrl = await getDownloadURL(imageRef);
+        updatedItem.img = imgUrl;
+        console.log("updatedItem.img", updatedItem.img);
+      }
       const docRef = doc(db, "list", updatedItem.id);
       await updateDoc(docRef, updateFields);
       alert("글 수정 완료");
