@@ -36,7 +36,9 @@ const List = ({ lists, onUpdate, onDelete }) => {
         />
       )}
       <div className={styles.list} onClick={() => setShowModal(!showModal)}>
-        <img src={img} alt={title} />
+        <div className={styles.list_img}>
+          <img src={img} alt={img} />
+        </div>
         <p>
           {title}
           <span onClick={handleDelete}>

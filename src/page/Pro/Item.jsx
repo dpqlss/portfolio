@@ -71,7 +71,9 @@ const Item = ({
             </li>
           </ul>
           <div className={styles.content}>
-            <img src={img} alt={title} />
+            <div className={styles.content_img}>
+              <img src={img} alt={img} />
+            </div>
             <p>{text}</p>
           </div>
           <form className={styles.comment}>
