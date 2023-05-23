@@ -25,12 +25,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
       {showModal && (
         <Item
           key={id}
-          date={date}
-          title={title}
-          url={url}
-          skill={skill}
-          img={img}
-          text={text}
+          {...{ date, title, url, skill, img, text }}
           onCloseModal={handleCloseModal}
           onUpdate={handleUpdate}
         />

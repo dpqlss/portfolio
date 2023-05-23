@@ -24,10 +24,9 @@ const EditorItem = ({
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    const fileURL = URL.createObjectURL(file);
     setFormData((prev) => ({
       ...prev,
-      img: fileURL,
+      img: file,
     }));
   };
 
@@ -100,7 +99,11 @@ const EditorItem = ({
             />
           </div>
           <div className={styles.list}>
-            <input type="file" accept="images/*" onChange={handleImageUpload} />
+            <input
+              type="file"
+              accept=".jpg, .png"
+              onChange={handleImageUpload}
+            />
           </div>
           <div className={styles.list}>
             <input

@@ -11,13 +11,7 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytes,
-  uploadString,
-} from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const Projects = () => {
   const [lists, setLists] = useState([]);
@@ -64,23 +58,17 @@ const Projects = () => {
   //추가
   const handleAdd = async (data) => {
     try {
-      const newItem = {
-        date: data.date,
-        title: data.title,
-        url: data.url,
-        skill: data.skill,
-        img: data.img,
-        text: data.text,
-      };
+      const { date, title, url, skill, img, text } = data;
+      const newItem = { date, title, url, skill, img, text };
       // 이미지 업로드
-      if (data.img) {
+      if (img) {
+        console.log(data.img);
         const storage = getStorage();
         const imageRef = ref(storage, `images/${data.img.name}`);
         await uploadBytes(imageRef, data.img);
         const imgUrl = await getDownloadURL(imageRef);
         newItem.img = imgUrl;
       }
-      console.log("img", newItem.img);
       await addDoc(collection(db, "list"), newItem);
       alert("새로운 글 등록 완료");
       return [...lists, newItem];
@@ -90,26 +78,17 @@ const Projects = () => {
   };
 
   // 업데이트
-  const handleUpdate = async (updatedItem) => {
+  const handleUpdate = async ({ id, updatedItem }) => {
     try {
-      const updateFields = {
-        date: updatedItem.updatedItem.date,
-        title: updatedItem.updatedItem.title,
-        url: updatedItem.updatedItem.url,
-        skill: updatedItem.updatedItem.skill,
-        img: updatedItem.updatedItem.img,
-        text: updatedItem.updatedItem.text,
-      };
       if (updatedItem.img) {
         const storage = getStorage();
-        const imageRef = ref(storage, `images/${updatedItem.id}`);
+        const imageRef = ref(storage, `images/${updatedItem.img.name}`);
         await uploadBytes(imageRef, updatedItem.img);
         const imgUrl = await getDownloadURL(imageRef);
         updatedItem.img = imgUrl;
-        console.log("updatedItem.img", updatedItem.img);
       }
-      const docRef = doc(db, "list", updatedItem.id);
-      await updateDoc(docRef, updateFields);
+      const docRef = doc(db, "list", id);
+      await updateDoc(docRef, updatedItem);
       alert("글 수정 완료");
     } catch (error) {
       console.log("실패", error);

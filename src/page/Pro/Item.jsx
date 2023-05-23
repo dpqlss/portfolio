@@ -86,12 +86,7 @@ const Item = ({
       </div>
       {isEdit && (
         <EditorItem
-          date={date}
-          title={title}
-          url={url}
-          skill={skill}
-          img={img}
-          text={text}
+          {...{ date, title, url, skill, img, text }}
           onUpdate={handleSubmit}
           onCloseModal={onCloseModal}
         />

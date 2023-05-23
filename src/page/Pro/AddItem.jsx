@@ -21,7 +21,6 @@ const AddItem = ({ onAdd, onCloseModal }) => {
       img: file,
     }));
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -98,7 +97,7 @@ const AddItem = ({ onAdd, onCloseModal }) => {
           <div className={styles.list}>
             <input
               type="file"
-              accept="images/*"
+              accept=".jpg, .png"
               placeholder="이미지를 업로드 해주세요"
               onChange={handleImageUpload}
             />
