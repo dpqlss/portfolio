@@ -12,8 +12,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
   };
 
   const handleUpdate = (updatedItem) => {
-    const updatedLists = { ...lists, updatedItem };
-    onUpdate(updatedLists);
+    onUpdate(updatedItem);
   };
 
   const handleDelete = () => {
@@ -25,7 +24,12 @@ const List = ({ lists, onUpdate, onDelete }) => {
       {showModal && (
         <Item
           key={id}
-          {...{ date, title, url, skill, img, text }}
+          date={date}
+          title={title}
+          url={url}
+          skill={skill}
+          img={img}
+          text={text}
           onCloseModal={handleCloseModal}
           onUpdate={handleUpdate}
         />
@@ -35,7 +39,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
           <img src={lists.img} alt={img} />
         </div>
         <p>
-          {title}
+          {lists.title}
           <span onClick={handleDelete}>
             <FaTrashAlt />
           </span>

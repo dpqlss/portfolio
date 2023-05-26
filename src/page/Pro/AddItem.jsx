@@ -93,7 +93,6 @@ const AddItem = ({ onAdd, onCloseModal }) => {
               onChange={handleChange}
             />
           </div>
-          {/* <div className={styles.content}>내용이 들어갑니다.</div> */}
           <div className={styles.list}>
             <input
               type="file"

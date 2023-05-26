@@ -12,10 +12,12 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { useRef } from "react";
 
 const Projects = () => {
   const [lists, setLists] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const dataId = useRef(0);
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -41,7 +43,6 @@ const Projects = () => {
     const listData = async () => {
       try {
         const docSnap = await getDocs(collection(db, "list"));
-        console.log("docSnap", docSnap);
         const data = docSnap.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -58,27 +59,36 @@ const Projects = () => {
   //추가
   const handleAdd = async (data) => {
     try {
-      const { date, title, url, skill, img, text } = data;
-      const newItem = { date, title, url, skill, img, text };
+      const newItem = {
+        id: dataId.current.toString(),
+        date: data.date,
+        title: data.title,
+        url: data.url,
+        skill: data.skill,
+        img: data.img,
+        text: data.text,
+      };
+      dataId.current += 1;
       // 이미지 업로드
-      if (img) {
-        console.log(data.img);
+      if (newItem.img) {
         const storage = getStorage();
         const imageRef = ref(storage, `images/${data.img.name}`);
         await uploadBytes(imageRef, data.img);
         const imgUrl = await getDownloadURL(imageRef);
         newItem.img = imgUrl;
       }
+      console.log("newImg", newItem.img);
       await addDoc(collection(db, "list"), newItem);
-      alert("새로운 글 등록 완료");
+      alert("등록 완료");
       return [...lists, newItem];
     } catch (error) {
-      console.log("실패", error);
+      alert("등록 실패", error);
     }
   };
 
-  // 업데이트
-  const handleUpdate = async ({ id, updatedItem }) => {
+  //업데이트
+  const handleUpdate = async (updatedItem) => {
+    console.log("updatedItem", updatedItem);
     try {
       if (updatedItem.img) {
         const storage = getStorage();
@@ -87,7 +97,7 @@ const Projects = () => {
         const imgUrl = await getDownloadURL(imageRef);
         updatedItem.img = imgUrl;
       }
-      const docRef = doc(db, "list", id);
+      const docRef = doc(db, "list", updatedItem);
       await updateDoc(docRef, updatedItem);
       alert("글 수정 완료");
     } catch (error) {
@@ -97,8 +107,21 @@ const Projects = () => {
 
   // 삭제
   const handleDelete = async (deleted) => {
-    setLists((prev) => prev.filter((item) => item.id !== deleted.id));
-    await deleteDoc(doc(db, "list", deleted.id));
+    setLists((prev) =>
+      prev.filter((item) => item.id !== deleted.id.toString())
+    );
+    try {
+      console.log("삭제할 문서의 식별자:", typeof `${deleted.id}`);
+      const querySnapshot = await getDocs(collection(db, "list"));
+      querySnapshot.forEach((doc) => {
+        if (doc.data().id === deleted.id.toString()) {
+          deleteDoc(doc.ref);
+        }
+      });
+      alert("삭제 완료");
+    } catch (error) {
+      alert("삭제 실패", error);
+    }
   };
 
   return (
@@ -114,14 +137,7 @@ const Projects = () => {
         {lists.map((item) => (
           <List
             key={item.id}
-            lists={{
-              ...item,
-              date: item.date,
-              url: item.url,
-              skill: item.skill,
-              img: item.img,
-              text: item.text,
-            }}
+            lists={item}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
           />
