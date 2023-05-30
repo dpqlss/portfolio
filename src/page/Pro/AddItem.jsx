@@ -31,6 +31,10 @@ const AddItem = ({ onAdd, onCloseModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.title.length < 1) {
+      alert("제목을 한글자 이상 입력해주세요");
+      return;
+    }
     onAdd(formData);
     setFormData(initialState);
     onCloseModal();

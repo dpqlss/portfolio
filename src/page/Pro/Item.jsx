@@ -5,6 +5,7 @@ import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 import EditorItem from "./EditorItem";
 
 const Item = ({
+  id,
   title,
   date,
   url,
@@ -86,6 +87,7 @@ const Item = ({
       </div>
       {isEdit && (
         <EditorItem
+          id={id}
           date={date}
           title={title}
           url={url}

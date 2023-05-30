@@ -7,7 +7,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
   const { id, date, title, url, skill, img, text } = lists;
   const [showModal, setShowModal] = useState(false);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (e) => {
     setShowModal(false);
   };
 
@@ -23,7 +23,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
     <>
       {showModal && (
         <Item
-          key={id}
+          id={id}
           date={date}
           title={title}
           url={url}

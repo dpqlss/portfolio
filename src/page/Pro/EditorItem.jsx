@@ -4,6 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { BiLinkAlt, BiAlignLeft } from "react-icons/bi";
 
 const EditorItem = ({
+  id,
   title,
   date,
   url,
@@ -14,6 +15,7 @@ const EditorItem = ({
   onCloseModal,
 }) => {
   const [formData, setFormData] = useState({
+    id,
     title,
     date,
     url,
