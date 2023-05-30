@@ -23,6 +23,7 @@
 
 .close_btn {
   position: absolute;
+  top: 86px;
   right: 100px;
   padding: 20px;
   cursor: pointer;
@@ -109,6 +110,7 @@
 
 @media (max-width: 1200px) {
   .close_btn {
+    top: 50px;
     right: 60px;
   }
 
@@ -139,7 +141,6 @@
 
 @media (max-width: 600px){
   .close_btn {
-    top: 24px;
     right: 40px;
   }
 

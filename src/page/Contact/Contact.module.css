@@ -29,7 +29,7 @@
   position: relative;
   width: calc(100% / 2 - 30px);
   height: 0;
-  padding-top: 50%;
+  padding-top: 60%;
   background-color: #ddd;
   overflow: hidden;
 }
@@ -54,26 +54,32 @@
   border-bottom: 1px dashed #ddd;
 }
 
-.contact ul li span {
-  padding-right: 10px;
+.contact ul li dt {
+  display: flex;
+  align-items: center;
 }
 
-.contact ul li p {
+.contact ul li dt span {
+  margin-right: 10px;
+}
+
+.contact ul li dd {
+  margin-bottom: 10px;
   padding: 20px 0;
   font-size: 18px;
   font-weight: 500;
   color :#fff;
 }
 
-.contact ul li button {
-  margin: 20px 0;
+.contact ul li dd a {
   padding: 10px 30px;
   border-radius: 50px;
-  border: none;
+  font-size: 14px;
+  color: #454545;
   background-color: #f0f0f0;
 }
 
-.contact ul li button:hover {
+.contact ul li dd a:hover {
   background-color: #39d9c8;
   color: #fff;
   cursor: pointer;
@@ -93,11 +99,7 @@
     margin-bottom: 20px;
   }
 
-  .contact ul li p {
-    padding: 14px 0; 
-  }
-
-  .contact ul li button {
+  .contact ul li dd a {
     padding: 8px 20px;
     margin: 12px 0;
     font-size: 12px;

@@ -21,7 +21,6 @@ const Header = () => {
     const updateScroll = () => {
       setHeaderScroll(window.scrollY || document.documentElement.scrollTop);
     };
-
     window.addEventListener("scroll", updateScroll);
 
     return () => {
@@ -47,7 +46,7 @@ const Header = () => {
             <div className={styles.hide_menu}></div>
           )}
         </div>
-        <p>TEL. 010 6786 2018</p>
+        <p style={{ whiteSpace: "normal" }}>TEL. 010 6786 2018</p>
       </div>
       <div
         className={headerScroll < 100 ? styles.right_menu : styles.change_right}
@@ -62,7 +61,7 @@ const Header = () => {
             </li>
 
             <li>
-              <Link to="projects">Projects</Link>
+              <Link to="projects">Board</Link>
             </li>
 
             <li>

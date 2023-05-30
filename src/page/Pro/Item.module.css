@@ -82,6 +82,17 @@
   color: #505050;
 }
 
+.item_box > ul li p a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #505050;
+}
+
+.item_box > ul li p a:hover {
+  color: #39d9c8;
+}
+
 .content {
   margin: 30px 0;
 }

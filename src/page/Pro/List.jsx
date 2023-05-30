@@ -7,7 +7,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
   const { id, date, title, url, skill, img, text } = lists;
   const [showModal, setShowModal] = useState(false);
 
-  const handleCloseModal = (e) => {
+  const handleCloseModal = () => {
     setShowModal(false);
   };
 

@@ -55,7 +55,7 @@ const Skill = () => {
           <dl>
             <dt>React</dt>
             <dd>
-              REACT 문법으로 프로젝트를 진행하여 반복적으로사용될 코드를 나누어
+              REACT 문법으로 프로젝트를 진행하여 반복적으로 사용될 코드를 나누어
               담을 수 있은 함수 component 와 props를 사용하여 작업 가능합니다.
             </dd>
           </dl>

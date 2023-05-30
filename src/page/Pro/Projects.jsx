@@ -42,7 +42,7 @@ const Projects = () => {
   const handleAdd = async (data) => {
     try {
       const newItem = {
-        id: (lists.length > 0 ? lists[0].id + 1 : 0).toString(),
+        id: (lists.length > 0 ? Number(lists[0].id) + 1 : 0).toString(),
         date: data.date,
         title: data.title,
         url: data.url,
@@ -106,9 +106,9 @@ const Projects = () => {
 
   return (
     <section className={styles.projects}>
-      <h2>Projects</h2>
+      <h2>Board</h2>
       <button className={styles.add} onClick={handleOpenModal}>
-        Add Project +
+        Add +
       </button>
       {showModal && (
         <AddItem onAdd={handleAdd} onCloseModal={handleCloseModal} />
