@@ -94,7 +94,7 @@ const Projects = () => {
       setLists((prev) => prev.filter((item) => item.id !== deleted.id));
       const querySnapshot = await getDocs(collection(db, "list"));
       querySnapshot.forEach((doc) => {
-        if (doc.data().id === deleted.id.toString()) {
+        if (doc.data().id === deleted.id) {
           deleteDoc(doc.ref);
         }
       });
