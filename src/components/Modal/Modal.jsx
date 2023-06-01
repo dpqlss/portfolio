@@ -8,6 +8,11 @@ const Modal = () => {
       <div className={styles.show_menu}></div>
       <ul className={styles.modal_menu}>
         <li>
+          <Link to="/" className={styles.home_menu}>
+            Home
+          </Link>
+        </li>
+        <li>
           <Link to="about">About</Link>
         </li>
         <li>

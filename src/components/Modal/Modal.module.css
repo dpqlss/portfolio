@@ -57,6 +57,10 @@
   transition:all .3s ease 
  }
 
+.home_menu {
+  display: none;
+}
+
 @media (max-width: 600px){
   .show_menu {
     top:50px;
@@ -67,6 +71,10 @@
   .modal_menu li {
     padding: 18px 0;
     font-size: 40px;
+  }
+
+  .home_menu {
+    display: block;
   }
 }
 
