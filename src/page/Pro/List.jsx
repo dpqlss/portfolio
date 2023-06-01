@@ -4,7 +4,7 @@ import styles from "./List.module.css";
 import Item from "./Item";
 
 const List = ({ lists, onUpdate, onDelete }) => {
-  const { id, date, title, url, skill, img, text } = lists;
+  const { id, date, title, url, text, img, detail } = lists;
   const [showModal, setShowModal] = useState(false);
 
   const handleCloseModal = () => {
@@ -27,9 +27,9 @@ const List = ({ lists, onUpdate, onDelete }) => {
           date={date}
           title={title}
           url={url}
-          skill={skill}
-          img={img}
           text={text}
+          img={img}
+          detail={detail}
           onCloseModal={handleCloseModal}
           onUpdate={handleUpdate}
         />

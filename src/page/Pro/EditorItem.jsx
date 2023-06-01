@@ -8,9 +8,9 @@ const EditorItem = ({
   title,
   date,
   url,
-  skill,
-  img,
   text,
+  img,
+  detail,
   onUpdate,
   onCloseModal,
 }) => {
@@ -19,9 +19,9 @@ const EditorItem = ({
     title,
     date,
     url,
-    skill,
-    img,
     text,
+    img,
+    detail,
   });
 
   const handleImageUpload = (e) => {
@@ -91,12 +91,12 @@ const EditorItem = ({
               <span>
                 <BiAlignLeft />
               </span>
-              Skill
+              Text
             </p>
             <input
               type="text"
-              name="skill"
-              value={formData.skill}
+              name="text"
+              value={formData.text}
               onChange={handleChange}
             />
           </div>
@@ -110,8 +110,8 @@ const EditorItem = ({
           <div className={styles.list}>
             <input
               type="text"
-              name="text"
-              value={formData.text}
+              name="detail"
+              value={formData.detail}
               onChange={handleChange}
             />
           </div>

@@ -1,6 +1,6 @@
 .intro {
   position: fixed;
-  top:50%;
+  top:48%;
   left: 140px;
   width: 100%;
 }
@@ -14,6 +14,29 @@
 .intro > p {
   color: #fff;
   font-size: 18px;
+}
+
+.resumebtn {
+  width: 160px;
+  margin-top: 30px;
+}
+
+.resumebtn a {
+  display: block;
+  padding: 12px 40px;
+  border: 1px solid none;
+  border-radius: 50px;
+  background-color: #fff;
+  text-align: center;
+  color: #454545;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.resumebtn:hover a{
+  background-color: #39d9c8;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media (max-width: 900px){
@@ -34,6 +57,11 @@
 
   .intro > p {
     font-size: 16px;
+  }
+
+  .resumebtn {
+    margin: 0 auto;
+    padding-top: 30px;
   }
 }
 

@@ -15,7 +15,6 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 const Projects = () => {
   const [lists, setLists] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  // const dataId = useRef(0);
 
   const handleOpenModal = useCallback(() => {
     setShowModal(true);
@@ -46,9 +45,9 @@ const Projects = () => {
         date: data.date,
         title: data.title,
         url: data.url,
-        skill: data.skill,
-        img: data.img,
         text: data.text,
+        img: data.img,
+        detail: data.detail,
       };
       // 이미지 업로드
       if (newItem.img) {
@@ -135,20 +134,20 @@ export default Projects;
 //     title: "Youtube",
 //     img: process.env.PUBLIC_URL + "/img/pro1.png",
 //     url: "url이 들어갑니다.",
-//     skill: "skill이 들어갑니다.",
+//     text: "짧은글이 들어갑니다.",
 //   },
 //   {
 //     id: 2,
 //     title: "Shopping",
 //     img: process.env.PUBLIC_URL + "/img/pro2.png",
 //     url: "url이 들어갑니다.",
-//     skill: "skill이 들어갑니다.",
+//     text: "짧은글이 들어갑니다.",
 //   },
 //   {
 //     id: 3,
 //     title: "TodoList",
 //     img: process.env.PUBLIC_URL + "/img/pro3.png",
 //     url: "url이 들어갑니다.",
-//     skill: "skill이 들어갑니다.",
+//     text: "짧은글이 들어갑니다.",
 //   },
 // ];

@@ -9,9 +9,9 @@ const Item = ({
   title,
   date,
   url,
-  skill,
-  img,
   text,
+  img,
+  detail,
   onCloseModal,
   onUpdate,
 }) => {
@@ -61,16 +61,16 @@ const Item = ({
                 <span>
                   <BiAlignLeft />
                 </span>
-                Skill
+                Text
               </p>
-              <p>{skill}</p>
+              <p>{text}</p>
             </li>
           </ul>
           <div className={styles.content}>
             <div className={styles.content_img}>
               <img src={img} alt={img} />
             </div>
-            <p>{text}</p>
+            <p>{detail}</p>
           </div>
           {/* <form className={styles.comment}>
             <input type="text" placeholder="댓글이 들어갑니다." />
@@ -86,9 +86,9 @@ const Item = ({
           date={date}
           title={title}
           url={url}
-          skill={skill}
-          img={img}
           text={text}
+          img={img}
+          detail={detail}
           onUpdate={handleSubmit}
           onCloseModal={onCloseModal}
         />

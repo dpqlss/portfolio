@@ -44,7 +44,7 @@ const Contact = () => {
               </dt>
               <dd>
                 <a href="https://github.com/dpqlss" target="blank">
-                  Github 연결하기
+                  Github 바로가기
                 </a>
               </dd>
             </dl>
@@ -59,10 +59,10 @@ const Contact = () => {
               </dt>
               <dd>
                 <a
-                  href="https://petalite-pyrite-0ab.notion.site/39260880bc10460782d7264051738263"
+                  href="https://petalite-pyrite-0ab.notion.site/Turtle-9fee49a50ce541309e34cc15dc1b743f"
                   target="blank"
                 >
-                  Notion 연결하기
+                  Notion 바로가기
                 </a>
               </dd>
             </dl>

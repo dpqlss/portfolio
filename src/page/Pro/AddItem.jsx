@@ -8,9 +8,9 @@ const AddItem = ({ onAdd, onCloseModal }) => {
     date: "",
     title: "",
     url: "",
-    skill: "",
-    img: null,
     text: "",
+    img: null,
+    detail: "",
   };
   const [formData, setFormData] = useState(initialState);
 
@@ -87,13 +87,13 @@ const AddItem = ({ onAdd, onCloseModal }) => {
               <span>
                 <BiAlignLeft />
               </span>
-              Skill
+              Text
             </p>
             <input
               type="text"
-              placeholder="스킬을 입력해주세요."
-              name="skill"
-              value={formData.skill}
+              placeholder="Text를 입력해주세요"
+              name="text"
+              value={formData.text}
               onChange={handleChange}
             />
           </div>
@@ -108,9 +108,9 @@ const AddItem = ({ onAdd, onCloseModal }) => {
           <div className={styles.list}>
             <input
               type="text"
-              name="text"
-              vaule={formData.text}
-              placeholder="내용을 입력해주세요"
+              name="detail"
+              vaule={formData.detail}
+              placeholder="상세내용을 입력해주세요"
               onChange={handleChange}
             />
           </div>
