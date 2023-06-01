@@ -12,22 +12,17 @@
   position: fixed;
   top:50%;
   left: 50%;
-  width: 1200px;
-  max-height: 620px;
-  transform: translate(calc(-50% + 40px), -50%);
-  padding: 80px;
+  width: 1000px;
+  transform: translate(calc(-50%), -50%);
   border-radius: 10px;
   background-color: #fff;
   overflow: auto;
 }
 
-.item_box {
-  color: #505050;
-}
-
 .close_btn {
   position: absolute;
-  right: 100px;
+  top: 40px;
+  right: 60px;
   padding: 20px;
   cursor: pointer;
 }
@@ -47,6 +42,13 @@
 
 .close_btn::after {
   transform: rotate(-45deg);
+}
+
+.item_box {
+  max-height: 650px;
+  padding: 80px;
+  overflow: auto;
+  color: #505050;
 }
 
 .item_box > h2 {
@@ -121,7 +123,6 @@
   padding: 20px 10px;
 }
 
-
 .editBtn {
   width: 100%;
   padding: 16px 70px;
@@ -137,14 +138,8 @@
 } 
 
 @media (max-width: 1200px) {
-  .close_btn {
-    right: 60px;
-  }
-
   .container {
     width: 80%;
-    transform: translate(calc(-50% + 20px), -50%);
-    padding: 50px;
   }
 
   .comment {
@@ -153,6 +148,15 @@
 }
 
 @media (max-width: 900px){
+  .close_btn {
+    top: 30px;
+    right: 40px;
+  }
+
+  .item_box {
+    padding: 60px;
+  }
+
   .title {
     font-size: 40px;
   }
@@ -164,20 +168,18 @@
 }
 
 @media (max-width: 600px){
-  .container {
-    width: 80%;
-    max-height: 460px;
-    transform: translate(calc(-50% + 0px), -50%);
-    padding: 30px;
-  }
-
   .close_btn {
-    right: 40px;
     top: 20px;
+    right: 30px;
   }
 
   .close_btn::before, .close_btn::after {
     width: 26px;
+  }
+
+  .item_box {
+    max-height: 460px;
+    padding: 30px;
   }
   
   .item_box > h2 {
@@ -197,7 +199,7 @@
   }
 
   .content > .content_img img{
-    max-width: 240px;
+    max-width: 250px;
     max-height: 200px;
   }
 
