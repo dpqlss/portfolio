@@ -23,9 +23,9 @@
 
 .close_btn {
   position: absolute;
-  top: 86px;
+  /* top: 86px; */
   right: 100px;
-  padding: 20px;
+  padding: 26px 20px;
   cursor: pointer;
 }
 
@@ -54,6 +54,7 @@
 
 .title {
   width: 100%;
+  padding-right: 30px;
   margin-bottom: 30px;
   font-size: 48px;
   font-family: "Montserrat";
@@ -110,7 +111,6 @@
 
 @media (max-width: 1200px) {
   .close_btn {
-    top: 50px;
     right: 60px;
   }
 
@@ -141,7 +141,12 @@
 
 @media (max-width: 600px){
   .close_btn {
+    padding: 16px;
     right: 40px;
+  }
+
+  .close_btn::before, .close_btn::after {
+    width: 26px;
   }
 
   .container {

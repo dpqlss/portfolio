@@ -50,6 +50,7 @@
 }
 
 .item_box > h2 {
+  margin-right: 30px;
   padding-bottom: 50px;
   font-size: 48px;
   font-family: "Montserrat";
@@ -173,6 +174,10 @@
   .close_btn {
     right: 40px;
     top: 20px;
+  }
+
+  .close_btn::before, .close_btn::after {
+    width: 26px;
   }
   
   .item_box > h2 {
