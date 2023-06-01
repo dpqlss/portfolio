@@ -100,7 +100,7 @@ const AddItem = ({ onAdd, onCloseModal }) => {
           <div className={styles.list}>
             <input
               type="file"
-              accept=".jpg, .png"
+              accept=".gif, .jpg, .png"
               placeholder="이미지를 업로드 해주세요"
               onChange={handleImageUpload}
             />

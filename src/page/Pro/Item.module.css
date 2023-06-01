@@ -73,7 +73,7 @@
 }
 
 .item_box > ul li p:nth-child(1){
-  width: 120px;
+  padding-right: 50px;
   font-weight: 600;
 }
 
@@ -84,7 +84,7 @@
 
 .item_box > ul li p a {
   display: block;
-  overflow: hidden;
+  word-break: break-all;
   text-overflow: ellipsis;
   color: #505050;
 }
@@ -94,7 +94,7 @@
 }
 
 .content {
-  margin: 30px 0;
+  margin: 30px 0 50px;
 }
 
 .content > .content_img {
@@ -146,10 +146,6 @@
     padding: 50px;
   }
 
-  .item_box > ul {
-    padding-bottom: 20px;
-  }
-
   .comment {
     margin: 10px 0px;
   }
@@ -160,12 +156,9 @@
     font-size: 40px;
   }
 
-  .item_box > ul {
-    padding-bottom: 10px;
-  }
-
-  .content {
-    margin: 50px 0 60px;
+  .content > .content_img img{
+    max-width: 400px;
+    max-height: 220px;
   }
 }
 
@@ -187,22 +180,24 @@
     font-size: 24px;
   }
 
-  .item_box > ul {
-    display: block;
-  }
-
   .item_box > ul > li {
     display: block;
     padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
   }
 
   .item_box > ul li p {
     font-size: 12px;
-    padding-bottom: 15px;
+    padding: 8px 0;
   }
 
-  .content {
-    margin-bottom: 40px;
+  .content > .content_img img{
+    max-width: 240px;
+    max-height: 200px;
+  }
+
+  .content p {
+    font-size: 12px;
   }
   
   .editBtn {

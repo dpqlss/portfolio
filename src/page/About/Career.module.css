@@ -71,6 +71,13 @@
   .career > h2 {
     font-size: 36px;
   }
+
+  .item > span {
+    display: block;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 320px){
@@ -82,12 +89,6 @@
     font-size: 16px;
   }
 
-  .item > span {
-    display: block;
-    margin-top: 10px;
-    margin-left: 0px;
-    font-size: 14px;
-  }
   .box > li p {
     padding: 10px 0;
   }

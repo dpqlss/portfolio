@@ -35,6 +35,8 @@
 /* 모바일 기준 */
 @media (max-width: 600px){
   .wrap {
+    height: 100%;
+    overflow: hidden;
     padding-left: 0px;
   }
 
