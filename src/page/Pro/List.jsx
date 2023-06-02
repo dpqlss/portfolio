@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "./List.module.css";
 import Item from "./Item";
+import { useNavigate } from "react-router-dom";
 
 const List = ({ lists, onUpdate, onDelete }) => {
   const { id, date, title, url, text, img, detail } = lists;
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -16,7 +18,10 @@ const List = ({ lists, onUpdate, onDelete }) => {
   };
 
   const handleDelete = () => {
-    onDelete(lists);
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+      onDelete(lists);
+      navigate("/Projects", { replace: true });
+    }
   };
 
   return (
