@@ -46,7 +46,7 @@ const List = ({ lists, onUpdate, onDelete }) => {
         <div className={styles.list_title}>
           <p>{lists.title}</p>
           <button onClick={handleDelete}>
-            <FaTrashAlt />
+            <FaTrashAlt className={styles.icon} />
           </button>
         </div>
       </div>
