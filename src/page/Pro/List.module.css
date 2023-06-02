@@ -41,15 +41,14 @@
 }
 
 .list > .list_title > button {
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   border: none;
   border-radius: 50%;
   background-color: #333;
 }
 
 .list > .list_title > button > .icon {
-  text-align: center;
   font-size: 16px;
   line-height: 35px;
   color: #fff;
