@@ -65,16 +65,8 @@ const Projects = () => {
     }
   };
 
-  //업데이트
   const handleUpdate = async (updatedItem) => {
     try {
-      if (updatedItem.img) {
-        const storage = getStorage();
-        const imageRef = ref(storage, `images/${updatedItem.img.name}`);
-        await uploadBytes(imageRef, updatedItem.img);
-        const imgUrl = await getDownloadURL(imageRef);
-        updatedItem.img = imgUrl;
-      }
       const queryUpdate = await getDocs(collection(db, "list"));
       queryUpdate.forEach((doc) => {
         if (doc.data().id === updatedItem.id) {

@@ -72,6 +72,7 @@
 }
 
 .contact ul li dd a {
+  margin-bottom: 10px;
   padding: 10px 30px;
   border-radius: 50px;
   font-size: 14px;
@@ -99,9 +100,13 @@
     margin-bottom: 20px;
   }
 
+  .contact ul li dd {
+    padding: 15px 0;
+  }
+
   .contact ul li dd a {
     padding: 8px 20px;
-    margin: 12px 0;
+    margin: 15px 0;
     font-size: 12px;
   }
 }
