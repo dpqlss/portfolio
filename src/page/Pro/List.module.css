@@ -69,16 +69,13 @@
   }
 
   .list > .list_title > p {
-    width: 240px;
+    width: 100%;
+    flex: 1;
   }
 }
 
 @media (max-width: 600px){
   .list {
     width: 100%;
-  }
-
-  .list > .list_title > p {
-    width: 160px;
   }
 }
