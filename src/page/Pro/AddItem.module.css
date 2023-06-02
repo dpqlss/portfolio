@@ -55,10 +55,12 @@
 
 .title {
   width: 100%;
+  height: 50px;
   padding-right: 30px;
   margin-bottom: 30px;
   font-size: 48px;
   font-family: "Montserrat";
+  vertical-align: middle;
   color:#505050;
   border:none;
 }
