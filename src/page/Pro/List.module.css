@@ -22,25 +22,33 @@
   object-fit: cover;
 }
 
-.list > p {
+.list > .list_title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  margin: 0px 20px;
+}
+
+.list > .list_title > p {
+  width: 280px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 22px 0px;
   font-size: 20px;
   font-weight: 700;
   color: #333;
 }
 
-.list > p span {
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  font-size: 14px;
+.list > .list_title > button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 36px;
+  color: #fff;
   background-color: #333;
-  border-radius: 50px;
-  text-align: center;
-  line-height: 25px;
 }
 
 .list > p span:hover {
@@ -49,19 +57,24 @@
   cursor: pointer;
 }
 
+@media (max-width: 1200px){
+  .list > .list_title > p {
+    width: 200px;
+  }
+}
+
 @media (max-width: 900px){
   .list {
-    width:calc(50% - 30px);
+    width:calc(50% - 23px);
+  }
+
+  .list > .list_title > p {
+    width: 240px;
   }
 }
 
 @media (max-width: 600px){
   .list {
     width: 100%;
-  }
-
-  .list > p {
-    padding: 10px 12px;
-    font-size: 16px;;
   }
 }

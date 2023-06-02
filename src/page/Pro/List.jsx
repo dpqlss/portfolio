@@ -38,12 +38,12 @@ const List = ({ lists, onUpdate, onDelete }) => {
         <div className={styles.list_img}>
           <img src={lists.img} alt={img} />
         </div>
-        <p>
-          {lists.title}
-          <span onClick={handleDelete}>
+        <div className={styles.list_title}>
+          <p>{lists.title}</p>
+          <button onClick={handleDelete}>
             <FaTrashAlt />
-          </span>
-        </p>
+          </button>
+        </div>
       </div>
     </>
   );
