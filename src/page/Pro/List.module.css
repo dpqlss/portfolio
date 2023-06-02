@@ -77,4 +77,8 @@
   .list {
     width: 100%;
   }
+
+  .list > .list_title > p {
+    width: 160px;
+  }
 }
