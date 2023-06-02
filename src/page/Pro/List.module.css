@@ -49,6 +49,7 @@
 }
 
 .list > .list_title > button > .icon {
+  text-align: center;
   font-size: 16px;
   line-height: 35px;
   color: #fff;
