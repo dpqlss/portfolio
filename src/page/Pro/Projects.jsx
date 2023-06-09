@@ -26,15 +26,15 @@ const Projects = () => {
 
   //실시간 데이터 업데이트
   useEffect(() => {
-    db.collection("list")
-      .orderBy("id", "desc")
-      .onSnapshot((snapshot) => {
-        const realTiem = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setLists(realTiem);
-      });
+    db.collection("list").onSnapshot((snapshot) => {
+      const realTiem = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      realTiem.sort((a, b) => b.id - a.id);
+      setLists(realTiem);
+      console.log("lists", realTiem);
+    });
   }, []);
 
   //추가
@@ -65,6 +65,7 @@ const Projects = () => {
     }
   };
 
+  //업데이트
   const handleUpdate = async (updatedItem) => {
     try {
       const queryUpdate = await getDocs(collection(db, "list"));
