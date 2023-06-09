@@ -7,6 +7,7 @@ import Main from "./page/Main/Main";
 import About from "./page/About/About";
 import Projects from "./page/Pro/Projects";
 import Contact from "./page/Contact/Contact";
+import TodoList from "./page/TodoList/TodoList";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "projects",
         element: <Projects />,
+      },
+      {
+        path: "todo",
+        element: <TodoList />,
       },
       {
         path: "contact",

@@ -1,0 +1,29 @@
+.todo {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.todoTitle {
+  height: 70px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.todoTitle > h2 {
+  padding: 20px;
+  line-height: 30px;
+  color: #333;
+  font-size: 30px;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+.todoBox {
+  height: 490px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: auto;
+}
+

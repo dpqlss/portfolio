@@ -1,0 +1,24 @@
+.addForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #50bdde;
+  border-radius: 10px;
+}
+
+.addBtn {
+  margin-left: 10px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: #50bdde;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Montserrat";
+  cursor: pointer;
+}
