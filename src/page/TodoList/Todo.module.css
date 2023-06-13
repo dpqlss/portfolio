@@ -1,7 +1,13 @@
 .todo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
+}
+
+.labelBox {
+  display: flex;
+  align-items: center;
 }
 
 .checkbox {
@@ -12,18 +18,20 @@
   border-radius: 100%;
 }
 
-.text {
-  width: 90%;
-  font-size: 18px;
-  color: #454545;
+.textBox {
+  padding: 10px 150px 10px 10px;
 }
 
-.icon {
+.btn {
   display: flex;
 }
 
-.icon button {
-  width: 70px;
+.btn button {
+  width: 100px;
   margin-left: 10px;
   padding: 10px;
+}
+
+.btn .icon {
+  width: 50px;
 }

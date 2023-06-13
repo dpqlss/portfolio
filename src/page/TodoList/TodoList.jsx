@@ -12,7 +12,9 @@ const TodoList = () => {
   };
 
   const handleUpdate = (updated) => {
+    console.log("???");
     setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+    console.log("updated", updated);
   };
 
   const handleDelte = (deleted) => {
