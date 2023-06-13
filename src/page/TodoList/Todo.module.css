@@ -21,3 +21,9 @@
 .icon {
   display: flex;
 }
+
+.icon button {
+  width: 70px;
+  margin-left: 10px;
+  padding: 10px;
+}

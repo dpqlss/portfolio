@@ -4,11 +4,19 @@ import Todo from "./Todo";
 import AddTodo from "./AddTodo";
 
 const TodoList = () => {
-  const [todos, setTodo] = useState(ListItem);
+  const [todos, setTodos] = useState(ListItem);
 
   const handleAdd = (todo) => {
-    setTodo([...todos, todo]);
+    setTodos([...todos, todo]);
     console.log(todos);
+  };
+
+  const handleUpdate = (updated) => {
+    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  };
+
+  const handleDelte = (deleted) => {
+    setTodos(todos.filter((t) => t.id !== deleted.id));
   };
 
   return (
@@ -20,7 +28,12 @@ const TodoList = () => {
         <AddTodo onAdd={handleAdd} />
         <ul className={styles.list}>
           {todos.map((item) => (
-            <Todo key={item.id} todo={item} />
+            <Todo
+              key={item.id}
+              todo={item}
+              onUpdate={handleUpdate}
+              onDelete={handleDelte}
+            />
           ))}
         </ul>
       </div>
