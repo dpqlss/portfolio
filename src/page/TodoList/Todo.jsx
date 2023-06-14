@@ -12,8 +12,7 @@ const Todo = ({ todo, onUpdate, onDelete }) => {
     setEditText(e.target.value);
   };
 
-  const handleSave = (e) => {
-    e.preventDefault();
+  const handleSave = () => {
     onUpdate({ ...todo, text: editText });
   };
 
@@ -21,9 +20,18 @@ const Todo = ({ todo, onUpdate, onDelete }) => {
     onDelete(todo);
   };
 
+  const handleEditButtonClick = () => {
+    if (!isOff) {
+      setIsOff(true);
+      return;
+    }
+    handleSave();
+    setIsOff(false);
+  };
+
   return (
     <li className={styles.todo}>
-      <label htmlFor={id} className={styles.labelBox} onSubmit={handleSave}>
+      <label htmlFor={id} className={styles.labelBox}>
         <input className={styles.checkbox} type="checkbox" id={id} />
         {isOff ? (
           <input
@@ -34,16 +42,9 @@ const Todo = ({ todo, onUpdate, onDelete }) => {
         ) : (
           <p className={styles.textBox}>{text}</p>
         )}
-        {/* <input
-          className={styles.textBox}
-          onChange={handleChange}
-          name="text"
-          defaultValue={handleSave ? text : editText}
-          disabled={isOff ? false : true}
-        /> */}
       </label>
       <div className={styles.btn}>
-        <button onClick={() => setIsOff(!isOff)}>
+        <button onClick={handleEditButtonClick}>
           {!isOff ? "수정하기" : "수정완료하기"}
         </button>
         <button className={styles.icon} onClick={handleDelted}>
