@@ -1,0 +1,12 @@
+.brand-tit {color: #001241; font-size: 26px; line-height: 1.4em; font-weight: 800; margin-bottom: 20px; font-family: 'Cormorant Garamond', 'NanumSquare', sans-serif;}
+.brand-cnt {font-size: 18px; line-height: 1.7em; color: #454545; padding-bottom: 70px; }
+.brand-cnt .cnt:nth-child(1) {font-size: 30px; padding-bottom: 30px; font-weight: 600;}
+.brand-cnt .cnt:nth-child(1) span {color: #798D00;}
+.sharp {display: flex; position: absolute; right: 0; top: 0; justify-content: flex-end;}
+.sharp img {border: 0; max-width: 50%; vertical-align: top;}
+
+@media (max-width: 1366px) {
+    .box-N12 .contain {text-align: center;}
+    .sharp {display: flex; position: relative; justify-content: center;}
+    .sharp img {max-width: 30%;}
+}

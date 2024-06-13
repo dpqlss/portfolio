@@ -1,0 +1,17 @@
+img {border: none; max-width: 100%; vertical-align: top;}
+
+.down-list {display: flex; justify-content: center; padding-bottom: 50px;}
+.down-list ul {display: flex; justify-content: space-between; width: 50%;}
+.down-list ul li {position: relative; width: 48%; padding: 0 10px; border-radius: 50px; background-color: #f0f0f0;}
+.down-list ul li a {display: block; padding: 15px 10px; font-weight: 600;}
+.down-list ul li a i {position: absolute; right: 20px; color: #798D00;}
+
+@media (max-width: 1024px) {
+    .down-list ul {display: flex; justify-content: space-between; width: 100%;}
+}
+
+@media (max-width: 767px) {
+    .down-list ul {flex-direction: column;}
+    .down-list ul li {width: 100%; margin-bottom: 10px;}
+    .down-list {padding-bottom: 20px;}
+}

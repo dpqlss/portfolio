@@ -1,0 +1,25 @@
+.brand-tit {color: #001241; font-size: 26px; line-height: 1.4em; font-weight: 800; margin-bottom: 20px; font-family: 'Cormorant Garamond', 'NanumSquare', sans-serif;}
+.brand-cnt {font-size: 18px; line-height: 1.7em; color: #454545; padding-bottom: 70px; }
+.brand-cnt .cnt:nth-child(1) {font-size: 30px; padding-bottom: 30px; font-weight: 600;}
+.brand-cnt .cnt:nth-child(1) span {color: #798D00;}
+.sharp {display: flex; position: absolute; right: 0; top: 0; justify-content: flex-end;}
+img {border: 0; width: 100%;vertical-align: top;}
+
+.premium-cnt ul {display: flex; flex-wrap: wrap;}
+.premium-cnt ul li {width: 50%; padding: 0 24px; margin-bottom: 50px;}
+.premium-cnt .step {width: 165px; background: #e0e6bb; line-height: 40px; box-shadow: 4px 4px 4px rgba(0, 0, 0, .18); font-size: 16px; color: #4b5704; font-weight: 700; text-align: center; border-radius: 15px 15px 0 0; font-family: 'Cormorant Garamond', serif;}
+.premium-cnt .box {box-shadow: 4px 4px 4px rgba(0, 0, 0, .18); border-radius: 0 20px;}
+.premium-cnt .img {max-height: 230px; border-radius: 0 20px 0 0; overflow: hidden;}
+.premium-cnt .info {position: relative; background: #fff; border: 1px solid #ddd; height: 150px; border-radius: 0 0 0 20px; padding: 20px 30px;}
+.premium-cnt .info .tit1 {color: #798D00; font-size: 22px; line-height: 1.4em; font-weight: 600; margin-bottom: 14px;}
+.premium-cnt .info .cnt {font-size: 16px; line-height: 1.4em; color: #454545;}
+
+@media (max-width: 992px) {
+    .premium-cnt .info .tit1 {font-size: 20px;}
+    .premium-cnt .info .cnt {font-size: 14px;}
+}
+
+@media (max-width: 767px) {
+    .premium-cnt ul {flex-direction: column;}
+    .premium-cnt ul li {width: 100%;}
+}

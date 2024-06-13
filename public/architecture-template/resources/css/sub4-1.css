@@ -1,0 +1,29 @@
+.calendar table {width: 100%; table-layout: fixed; border-collapse: collapse; border-spacing: 0px;}
+.calendar table th {padding: 12px 4px; text-align: center; border: 1px solid #ddd; background: #eee; color: #2c2c2c; font-size: 16px; line-height: 1.4em;}
+.calendar table tr th:first-child, .calendar table tr td:first-child .cal-date {color: #ea4044;}
+.calendar table td {height: 125px; position: relative; padding: 10px; vertical-align: top; border: 1px solid #ddd;color: #454545; font-size: 16px; line-height: 1.4em; font-weight: 500; letter-spacing: -.03em;}
+.calendar .cal-date {line-height: 1em; font-weight: 500; color: #767676; margin-bottom: 10px;}
+.calendar table tr td:first-child .cal-date {color: #ea4044;}
+.calendar .month {position: absolute; bottom: 0; right: 10px; font-size: 50px; line-height: 1.4em; color: #001241; font-weight: 500;}
+
+.calendar .label {text-align: center; position: absolute; bottom: 38px; left: 50%; transform: translateX(-50%); width: 80%; border-radius: 8px; font-size: 16px; font-weight: 500; line-height: 1.4em; color: #454545; padding: 8px 5px;}
+.calendar .open {position: absolute; background: #ebb565; color: #fff;}
+.calendar .blue {position: absolute; background: #0f75bc; color: #fff;}
+.calendar .cal-holiday-info {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; color: #ea4044;}
+
+@media (max-width: 992px) {
+    .calendar .month {font-size: 30px;}
+    .calendar table td {height: 100px;}
+    .calendar .label {bottom: 20px;}
+}
+
+@media (max-width: 767px) {
+    .calendar table td {height: 80px; padding: 5px;}
+    .calendar .month {font-size: 20px;}
+    .calendar .label {font-size: 12px;}
+}
+
+@media (max-width: 420px){
+    .calendar .label {font-size: 8px;}
+    .calendar table td {height: 70px;}
+}

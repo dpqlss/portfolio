@@ -1,0 +1,76 @@
+.box-N1 {
+    z-index: 5000;
+    position: fixed;
+    width: 100%;
+    min-height: auto;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+.header-top {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+}
+
+.header-top p {
+    text-align: center;
+    color: #fff;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+}
+
+.header-left .header-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.header-gnblist {
+    display: flex;
+    position: relative;
+}
+
+.header-gnbitem {
+    padding: 0 50px;
+    position: relative;
+}
+
+.header-sublist {
+    display: none;
+    position: absolute;
+    top: 49px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: opacity 0.4s ease, height 0.4s ease;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.header-subitem {
+    padding: 10px 20px;
+}
+
+.header-subitem a {
+    display: block;
+}
+
+.header-gnbitem.active .header-sublist {
+    display: block;
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.4s ease, height 0.4s ease;
+}
+
+.header-fullmenu {
+    display: none;
+}

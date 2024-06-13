@@ -1,0 +1,112 @@
+footer {
+    padding: 5rem 0 6rem;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.footer-title {
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.tell-num h2 {
+    font-size: 2.5rem;
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+.tell-list li, .clinic-list li, .emergency-text {
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tell-list li span, .clinic-list li span {
+    display: inline-block;
+    width: 100px;
+    font-weight: 600;
+}
+
+.emergency > .label {
+    padding: 20px 50px;
+    background-color: #0D326F;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.privacy-policy, .company-info {
+    display: flex;
+    padding-top: 30px;
+}
+
+.privacy-policy li, .company-info li {
+    padding-right: 50px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1200px) {
+    .footer-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .tell-box {
+        display: flex;
+    }
+
+    .tell-num, .footer-title {
+        width: 300px;
+    }
+
+    .time-box {
+        display: flex;
+        padding: 50px 0;
+        align-items: center;
+    }
+
+    .company-info {
+        flex-direction: column;
+    }
+    
+    .company-info li {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tell-box {
+        flex-direction: column;
+    }
+
+    .time-box {
+        flex-direction: column;
+        align-items: normal
+    }
+
+    .privacy-policy li, .company-info li {
+        padding-right: 20px;
+    }
+}

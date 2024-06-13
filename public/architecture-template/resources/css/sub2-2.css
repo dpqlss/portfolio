@@ -1,0 +1,21 @@
+.safety-warp {display: flex; justify-content: space-between; align-items: center}
+.safety-warp .nav {position: relative; flex: 1 1 auto; min-width: 0; width: 1%;margin-right: 50px;}
+.safety-warp .nav ul li {padding-top: 50px;}
+.safety-warp .nav ul li:first-child {padding: 0px;}
+.safety-warp .nav ul li.active  {color: #454545;border-left-color: #001241;}
+.safety-warp .nav ul li .tit {font-size: 30px; font-weight: 700; line-height: 1.5em; color: #004000;}
+.safety-warp .nav ul li .tit strong span {display: inline-block; width: 40px; height: 40px; border-radius: 50%; text-align: center; font-size: 26px; background-color: #004000; color: #fff; margin-right: 10px;}
+.safety-warp .nav ul li .txt {margin-top: 17px;}
+.safety-warp .nav-img {position: relative; width: 50%; max-width: 690px;}
+.safety-warp .nav-img img {border: 0; max-width: 100%; vertical-align: top;}
+
+@media (max-width: 767px) {
+    .safety-warp {flex-direction: column;}
+    .safety-warp .nav {width: 100%; margin-right: 0; padding-bottom: 50px;}
+    .safety-warp .nav-img {width: 100%;}
+}
+
+@media (max-width: 420px){
+    .safety-warp .nav ul li .tit {font-size: 24px;}
+    .safety-warp .nav ul li .tit strong span {width: 35px; height: 35px; font-size: 24px;}
+}

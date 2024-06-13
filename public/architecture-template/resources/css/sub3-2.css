@@ -1,0 +1,7 @@
+.box-N13 .sub-title { margin: 50px 0; text-align: center;}
+.box-N13 .sub-title h2 {position: relative;color: #242424; font-size: 30px; line-height: 1.5em; padding-bottom: 10px; font-weight: 700;letter-spacing: -.40px;font-family: 'NanumSquare', sans-serif;}
+.box-N13 .sub-title h2:after {content: ""; position: absolute; bottom: 0;left: 50%; width: 50px; height: 3px; background: #798D00; margin-left: -25px;}
+
+img {border: 0; width: 100%; vertical-align: top;}
+
+

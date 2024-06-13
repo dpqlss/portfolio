@@ -1,0 +1,97 @@
+.sub-menu { z-index: 10; margin-bottom: 8rem; position: relative; opacity: 0.7; text-align: center; font-size: 1.8rem; color: var(--text-color5); background-color: #798D00; }
+.content-container .dropset-head { width: 5.6rem; height: 60px; border-bottom: 0 none; }
+.content-container .dropset-head::after { font-size: var(--fs-h5); }
+.content-container .dropset .btn { width: 18rem; height: 60px;}
+.content-container .dropset.dropset-solid .dropset-toggle {display: flex; align-items: center; justify-content: space-between; border: none; border-left: 1px solid rgba(255, 255, 255, 0.3); border-right: 1px solid rgba(255, 255, 255, 0.3);border-bottom: 0 none; background-color: #798D00; color: #fff;}
+.content-container .dropset.dropset-solid .dropset-list { border: 1px solid #ddd; }
+.container-md { max-width: 1230px; margin: 0 auto; } 
+.dropset {position: relative;}
+.d-flex { display: flex !important; } 
+
+/* Dropdown : Dropset */
+.dropset-wrap { display: flex; } 
+.dropset { position: relative; } 
+.dropset .btn { position: relative; width: 100%; height: 60px; padding: 0 1.6rem; font-size: var(--fs-p1); text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border-radius: 0; color: var(--body-color); transition: none; } 
+.dropset .dropset-toggle::after { content: ''; position: absolute; top: 50%; right: 1.6rem; display: flex; align-items: center; transform: translateY(-50%); font-size: var(--fs-h4); } 
+.dropset .dropset-list { display: none; position: absolute; left: 0; width: 100%; z-index: 9; overflow: hidden; } 
+.dropset .dropset-link.btn { display: inline-flex; align-items: center; } 
+.dropset .dropset-head { display: flex; justify-content: center; align-items: center; width: 60px; height: 60px; } 
+.dropset.dropset-xl .btn { height: 6.4rem; padding: 0 2.4rem; font-size: 1.8rem; } 
+.dropset.dropset-xl .dropset-toggle { padding-right: calc(2.4rem + 2.4rem + 1.2rem); } 
+.dropset.dropset-xl .dropset-toggle::after { right: 2.4rem; } 
+.dropset.dropset-xl .dropset-head { width: 6.4rem; height: 6.4rem; } 
+.dropset.dropset-xl .dropset-head::after { width: 3rem; height: 3rem; } 
+.dropset.dropset-lg .btn { height: 60px; padding: 0 2.4rem; font-size: var(--fs-p1); } 
+.dropset.dropset-lg .dropset-toggle { padding-right: calc(2.4rem + 2.4rem + 1.2rem); } 
+.dropset.dropset-lg .dropset-toggle::after { right: 2.4rem; } 
+.dropset.dropset-lg .dropset-head { width: 5.6rem; height: 60px; } 
+.dropset.dropset-lg .dropset-head::after { width: 2.8rem; height: 2.8rem; } 
+.dropset.dropset-sm .btn { height: 4rem; padding: 0 1.2rem; font-size: var(--fs-p2); } 
+.dropset.dropset-sm .dropset-toggle { padding-right: calc(1.2rem + 2rem + 1.2rem); } 
+.dropset.dropset-sm .dropset-toggle::after { right: 1.2rem; font-size: var(--fs-h5); } 
+.dropset.dropset-sm .dropset-head { width: 4rem; height: 4rem; } 
+.dropset.dropset-xs .btn { height: 3.2rem; padding: 0 0.8rem; font-size: var(--fs-p3); } 
+.dropset.dropset-xs .dropset-toggle { padding-right: calc(0.8rem + 2rem + 0.8rem); } 
+.dropset.dropset-xs .dropset-toggle::after { right: 0.8rem; font-size: var(--fs-h5); } 
+.dropset.dropset-xs .dropset-head { width: 3.2rem; height: 3.2rem; } 
+.dropset.dropset-xs .dropset-head::after { width: 2.2rem; height: 2.2rem; } 
+.dropset.dropset-solid .dropset-toggle { border: 1px solid #ddd; } 
+.dropset.dropset-solid .dropset-list { background-color: #ffffff; border: 1px solid #ddd; border-top: none; } 
+.dropset.dropset-solid .dropset-item+.dropset-item { border-top: 1px solid #ddd; } 
+.dropset.dropset-solid .dropset-link:hover { background-color: var(--bg-color); } 
+.dropset.dropset-solid .dropset-head { border-left: 1px solid rgba(255, 255, 255, 0.3); font-size: 20px;} 
+.dropset.dropset-relax .dropset-toggle { border: 1px solid #ddd; } 
+.dropset.dropset-relax .dropset-toggle::after { content: '\e90d'; text-align: center; } 
+.dropset.dropset-relax .dropset-list { background-color: #ffffff; border: 1px solid #ddd; border-top: none; padding: 1.2rem 0; } 
+.dropset.dropset-relax .dropset-link:hover { background-color: var(--bg-color); } 
+.dropset.dropset-relax .dropset-head { border: 1px solid #ddd; } 
+.dropset.dropset-narrow .btn { padding: 0 1.2rem; } 
+.dropset.dropset-narrow .dropset-toggle { width: auto; background-color: transparent; padding-right: calc(1.2rem + 1.6rem + 1.2rem); } 
+.dropset.dropset-narrow .dropset-toggle::after { content: '\e90c'; right: 1.2rem; text-align: center; } 
+.dropset.dropset-narrow .dropset-list { width: 20rem; padding: 2.4rem; background-color: #ffffff; border: 1px solid #ddd; border-top: 1px solid var(--primary); } 
+.dropset.dropset-narrow .dropset-item+.dropset-item { margin-top: .8rem; } 
+.dropset.dropset-narrow .dropset-link { padding: 0; height: auto; } 
+.dropset.dropset-narrow .dropset-link:hover { color: var(--primary); } 
+.dropset.dropset-narrow .dropset-head { background-color: transparent; } 
+.dropset.dropset-narrow.dropset-xl .dropset-list { padding: 2.8rem; } 
+.dropset.dropset-narrow.dropset-lg .dropset-list { padding: 2.6rem; } 
+.dropset.dropset-narrow.dropset-sm .dropset-list { padding: 2.2rem; } 
+.dropset.dropset-narrow.dropset-xs .dropset-list { padding: 2rem; } 
+.dropset.active .btn { color: var(--body-color); } 
+.dropset.active .dropset-toggle::after { transform: translateY(-50%) rotate(180deg); justify-content: center; } 
+.dropset.active .dropset-list { display: block; } 
+
+/* 3차메뉴 */
+.aiq-tap ul {display: flex; margin-top: 45px; margin-bottom: 50px;}
+.aiq-tap ul li {width: calc(100%/4); flex: 1; border-bottom: 2px solid #798d00; background: #f5f5f5;}
+.aiq-tap ul li a {display: block; font-size: 18px; font-weight: 400; line-height: 1.4em; text-align: center;padding: 20px 0;}
+.aiq-tap ul li.active {border: 2px solid #798d00; background: #fff; border-bottom: 0;}
+.aiq-tap ul li.active a {color: #798d00;}
+.aiq .doc-tit {text-align: center; font-size: 32px; font-weight: 500; line-height: 1.4em; letter-spacing: -0.03em; color: #798D00; margin-bottom: 55px;}
+
+.contain {position: relative; width: 100%; max-width: 1230px; padding-left: 15px; padding-right: 15px; margin: 0 auto; padding-bottom: 100px;}
+.box-N10 {position: relative; }
+.box-N10 .intro-wrap {position: relative; width: 100%;}
+.box-N10 .intro-wrap .intro-bg {text-align: right; position: relative; background-image: url(../images/sub1-1-bg.jpeg); min-height: 20rem; background-position: center; background-repeat: no-repeat; background-size: cover;}
+.box-N10 .intro-wrap .intro-bg .intro-text { position: absolute; width: auto; left: 1rem; bottom: 1rem; z-index: 99; text-align: left; }
+
+.box-N12 .sub-title { margin: 50px 0; text-align: center;}
+.box-N12 .sub-title h2 {position: relative;color: #242424; font-size: 30px; line-height: 1.5em; padding-bottom: 10px; font-weight: 700;letter-spacing: -.40px;font-family: 'NanumSquare', sans-serif;}
+.box-N12 .sub-title h2:after {content: ""; position: absolute; bottom: 0;left: 50%; width: 50px; height: 3px; background: #798D00; margin-left: -25px;}
+.box-N12 .real-cont {padding-bottom: 100px;}
+.box-N12 .contain {position: relative;width: 100%; max-width: 1230px; padding-right: 15px; margin: 0 auto;}
+
+@media (max-width: 1024px) {
+    .content-container .dropset.dropset-solid .dropset-toggle {border-left: none;}
+    .sub-menu {margin-bottom: 5rem;}
+    .d-flex {flex-direction: column;}
+    .dropset:nth-child(2) {border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+    .dropset.dropset-solid .dropset-head {display: none;}
+    .content-container .dropset .btn {width: 100% !important;}
+
+    .aiq-tap ul li a {font-size: 16px; padding: 20px 5px;}
+}
+
+@media (max-width: 420px){
+    .aiq-tap ul li a {font-size: 16px;}
+}

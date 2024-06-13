@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="title" content="웹사이트">
+  <meta name="description" content="웹사이트입니다.">
+  <meta name="keywords" content="키워드,키워드,키워드">
+  <meta property="og:title" content="웹사이트">
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="웹사이트입니다">
+  <meta property="og:image" content="https://웹사이트/images/opengraph.png">
+  <meta property="og:url" content="https://웹사이트">
+  <meta property="og:site_name" content="웹사이트" />
+  <title>admin</title>
+  <link rel="stylesheet" href="../resources/css/reset.css">
+  <link rel="stylesheet" href="../resources/css/menu.css">
+  <link rel="stylesheet" href="../resources/css/board.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- navbar -->
+        <ul class="navbar-nav">
+            <a class="sidebar-brand" href="main.html">관리자페이지</a>
+            <li class="nav-item first active">
+                <a class="nav-link" href="main.html">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>메인화면</span>
+                </a>
+            </li>
+            <div class="sidebar-heading">Basic Manage</div>
+            <li class="nav-item hover">
+                <a class="nav-link" href="info.html">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>기본정보 설정</span>
+                </a>
+                <div id="admin_manage" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="collapse-inner">
+                        <a class="collapse-item" href="info.html">기본정보 설정</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-comments"></i>
+                    <span>게시판 관리</span>
+                </a>
+                <div id="admin_manage" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="collapse-inner">
+                        <a class="collapse-item" href="notice-board.html">공지사항 게시판</a>
+                    </div>
+                    <div class="collapse-inner">
+                        <a class="collapse-item" href="inq-board.html">문의하기 게시판</a>
+                    </div>
+                    <div class="collapse-inner">
+                        <a class="collapse-item" href="often-board.html">자주하는 질문 게시판</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- content -->
+        <div class="content-wrapper">
+            <div class="content">
+                <nav class="content-navbar">
+                    <a class="home-link" href="/">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <span class="text">APMETALBS</span>
+                    </a>
+                    <ul class="nav-info">
+                        <li class="nav-dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown">
+                                <span class="icon-text">admin(관리자)</span>
+                                <div class="icon-circle bg-website">
+                                    <i class="fas fa-user text-white"></i>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                                <a class="dropdown-item" href="info.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    내 정보수정
+                                </a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal" title="로그아웃">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    로그아웃
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="container-fluid">
+                    <h1>게시판 관리</h1>
+                    <div class="info-box">
+                        <div class="top-box">
+                            <p class="sub-title">공지사항 게시판</p>
+                            <p>전체 : 2건</p>
+                        </div>
+                        <div class="set-info">
+                            <table class="table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>게시판ID</th>
+                                        <th>게시판명</th>
+                                        <th>쓰기권한</th>
+                                        <th>읽기권한</th>
+                                        <th>설정</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>notice</td>
+                                        <td>공지사항</td>
+                                        <td>공개</td>
+                                        <td>공개</td>
+                                        <td>
+                                            <a class="edit-btn" href="notice-edit.html">수정</a>
+                                            <a class="delete-btn" href="">삭제</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>notice</td>
+                                        <td>공지사항</td>
+                                        <td>공개</td>
+                                        <td>공개</td>
+                                        <td>
+                                            <a class="edit-btn" href="notice-edit.html">수정</a>
+                                            <a class="delete-btn" href="">삭제</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="page-nation">
+                                <ul>
+                                    <li>
+                                        <a href=""><i class="fas fa-angle-double-left"></i></a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="">1</i></a>
+                                    </li>
+                                    <li>
+                                        <a href="">2</i></a>
+                                    </li>
+                                    <li>
+                                        <a href="">3</i></a>
+                                    </li>
+                                    <li>
+                                        <a href="">4</i></a>
+                                    </li>
+                                    <li>
+                                        <a href="">5</i></a>
+                                    </li>
+                                    <li>
+                                        <a href=""><i class="fas fa-angle-double-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../resources/js/setting.js"></script>
+    <script src="../resources/js/plugin.js"></script>
+    <script src="../resources/js/submenu.js"></script>
+</body>
