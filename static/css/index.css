@@ -211,3 +211,19 @@ header {
     margin-right: 0px;
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer ul li {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: 50px 20px;
+  }
+}
