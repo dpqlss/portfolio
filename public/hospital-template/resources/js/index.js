@@ -1,80 +1,94 @@
-$(document).ready(function(){
-    let currentIndex = 0;
-    const images = $('#section-5 ul li img').addClass('small-img');
-    const totalImages = images.length;
+$(document).ready(function () {
+  let currentIndex = 0;
+  const images = $("#section-5 ul li img").addClass("small-img");
+  const totalImages = images.length;
 
-    function updateMainImage(index){
-        const newSrc = images.eq(index).attr("src");
-        const mainImg = $("#main-img");
+  function updateMainImage(index) {
+    const newSrc = images.eq(index).attr("src");
+    const mainImg = $("#main-img");
 
-        mainImg.attr("src", newSrc); // 큰 이미지 src 변경
+    mainImg.attr("src", newSrc); // 큰 이미지 src 변경
+    setSmallImagesOpacity(index);
+    currentIndex = index;
+  }
+
+  function setSmallImagesOpacity(activeIndex) {
+    images.removeClass("active");
+    images.eq(activeIndex).addClass("active");
+  }
+
+  function slideImage(index, direction) {
+    const mainImg = $("#main-img");
+    const newSrc = images.eq(index).attr("src");
+
+    const cloneImg = mainImg.clone().attr("src", newSrc);
+
+    if (direction === "next") {
+      cloneImg.css({ left: "100%" });
+      mainImg.after(cloneImg);
+      mainImg.animate({ left: "-100%" }, 500);
+      cloneImg.animate({ left: "0%" }, 500, function () {
+        mainImg.remove();
+        cloneImg.attr("id", "main-img");
         setSmallImagesOpacity(index);
         currentIndex = index;
+      });
+    } else if (direction === "prev") {
+      cloneImg.css({ left: "-100%" });
+      mainImg.after(cloneImg);
+      mainImg.animate({ left: "100%" }, 500);
+      cloneImg.animate({ left: "0%" }, 500, function () {
+        mainImg.remove();
+        cloneImg.attr("id", "main-img");
+        setSmallImagesOpacity(index);
+        currentIndex = index;
+      });
     }
+  }
 
-    function setSmallImagesOpacity(activeIndex) {
-        images.removeClass('active');
-        images.eq(activeIndex).addClass('active');
+  $(".pre").click(function () {
+    const newIndex = (currentIndex - 1 + totalImages) % totalImages;
+    slideImage(newIndex, "prev");
+  });
+
+  $(".next").click(function () {
+    const newIndex = (currentIndex + 1) % totalImages;
+    slideImage(newIndex, "next");
+  });
+
+  images.click(function () {
+    const index = images.index(this); // 클릭한 이미지의 인덱스를 가져옴
+    const direction = index > currentIndex ? "next" : "prev";
+    slideImage(index, direction);
+  });
+
+  // 메뉴를 위한 이벤트 추가
+  $(".menu-icon").click(function (event) {
+    event.stopPropagation();
+    const topMenu = $(".show-box");
+    const topMenuIcon = $(this);
+
+    topMenu.toggle();
+
+    if (topMenu.is(":visible")) {
+      $(".menu-bg").show();
+      topMenuIcon.removeClass("fa-bars").addClass("fa-xmark");
+    } else {
+      $(".menu-bg").hide();
+      topMenuIcon.removeClass("fa-xmark").addClass("fa-bars");
     }
+  });
 
-    function slideImage(index, direction) {
-        const mainImg = $("#main-img");
-        const newSrc = images.eq(index).attr("src");
+  $(".hidden-btn").click(function () {
+    const quickMenu = $(".quick-menu ul");
+    const icon = $(this).find("i");
 
-        const cloneImg = mainImg.clone().attr("src", newSrc);
+    quickMenu.toggle();
 
-        if (direction === 'next') {
-            cloneImg.css({ left: '100%' });
-            mainImg.after(cloneImg);
-            mainImg.animate({ left: '-100%' }, 500);
-            cloneImg.animate({ left: '0%' }, 500, function() {
-                mainImg.remove();
-                cloneImg.attr("id", "main-img");
-                setSmallImagesOpacity(index);
-                currentIndex = index;
-            });
-        } else if (direction === 'prev') {
-            cloneImg.css({ left: '-100%' });
-            mainImg.after(cloneImg);
-            mainImg.animate({ left: '100%' }, 500);
-            cloneImg.animate({ left: '0%' }, 500, function() {
-                mainImg.remove();
-                cloneImg.attr("id", "main-img");
-                setSmallImagesOpacity(index);
-                currentIndex = index;
-            });
-        }
+    if (quickMenu.is(":visible")) {
+      icon.removeClass("fa-chevron-left").addClass("fa-chevron-right");
+    } else {
+      icon.removeClass("fa-chevron-right").addClass("fa-chevron-left");
     }
-
-    $(".pre").click(function(){
-        const newIndex = (currentIndex - 1 + totalImages) % totalImages;
-        slideImage(newIndex, 'prev');
-    });
-
-    $(".next").click(function(){
-        const newIndex = (currentIndex + 1) % totalImages;
-        slideImage(newIndex, 'next');
-    });
-
-    images.click(function(){
-        const index = images.index(this); // 클릭한 이미지의 인덱스를 가져옴
-        const direction = index > currentIndex ? 'next' : 'prev';
-        slideImage(index, direction);
-    });
-
-    // 메뉴를 위한 이벤트 추가
-    const menuIcon = document.querySelector('.menu-icon');
-    const menu = document.querySelector('.menu');
-    const menuBg = document.querySelector('.menu-bg');
-
-    menuIcon.addEventListener('click', function () {
-        menu.classList.toggle('show-box');
-        menuBg.classList.toggle('show-bg');
-    });
-
-    // 메뉴 외부를 클릭했을 때 메뉴를 닫는 기능 추가
-    menuBg.addEventListener('click', function () {
-        menu.classList.remove('show-box');
-        menuBg.classList.remove('show-bg');
-    });
+  });
 });
